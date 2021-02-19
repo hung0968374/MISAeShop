@@ -1,28 +1,64 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app1" v-bind:class="{handleDialog: showDialog }">
+      <Menu />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Menu from './components/menu';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Menu,
+  },
+  data() {
+    return {
+      content : [
+      ],
+      cusInfo:[
+        {
+          BaseSalary:"", 
+          Category:"", 
+          DateJoinFirm:"", 
+          DateOfBirth:"", 
+          Email:"", 
+          EmployeeCode:"", 
+          EmployeeId:"", 
+          FullName:"", 
+          Gender:"", 
+          GivenDate:"", 
+          GivenPlace:"", 
+          IdentityCard:"", 
+          PersonalTax:"", 
+          PhoneNumber:"", 
+          Position:"", 
+          WorkStatus:"", 
+        },
+      ],
+      showDialog: false,
+      affectedByDiaStt: true,
+      showEditEmInfoDia: false,
+    }
+  },
+  methods: {
+    
+  },
+  async created (){
+   
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    margin: 0px;
+  }
+  #app1 {
+    margin: 0px;
+    height: 98vh;
+  }
+  .handleDialog {
+    background-color: #69696954;
+  }
 </style>
