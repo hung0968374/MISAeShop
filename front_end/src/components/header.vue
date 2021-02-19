@@ -1,11 +1,23 @@
 <template>
      <div class="header">
-        <div class="res__name"><strong>Nha hang bien dong</strong></div>
+        <div class="restaurant__name"><strong>Cửa hàng</strong></div>
+        <div class="address">
+            <select class="option_name">
+                <option>DODAVI - 160 Hoàng Hoa Thám</option>
+            </select>
+        </div>
         <div class="user__info">
             <div class="avatar"></div>
-            <div class="user__name">Nguyen Huu Hung</div>
-            <div class="icon"></div>
+            <select class="user_option">
+                <option>qtht misa</option>
+            </select>
         </div>
+        <div class="icon">
+            <div class="support_icon"></div>
+            <div class="notification_icon"></div>
+            <div class="questionMark_icon"></div>
+        </div>
+        
     </div>
 </template>
 <script>
@@ -20,35 +32,68 @@ export default {
         top: 0px;
         left: 200px;
         width: calc(100% - 200px);
-        height: 60px;
+        height: 40px;
         border-left: 1px solid #9e9e9ecf;
         display: inline-flex;
+        margin-top: 20px;
     }
-    .res__name {
-        margin-top: 10px;
+    .icon {
+       display: flex;
+       align-items: center;
+       height: 40px;
+    }
+    .restaurant__name {
         margin-left: 40px;
         font-size: 30px;
     }
     .user__info {
-        margin-top: 15px;
-        margin-left: 800px;
-    display: inline-flex;
+        display: flex;
     }
-    .user__info .avatar {
-        width: 30px;
-        height: 30px;
-        background-image: url('../assets/icon/avatar-default.png');
+    .option_name {
+        padding: 10px;
+    }
+    .user_option {
+        padding: 10px;
+        height: 40px;
+        border: none;
+    }
+    .avatar {
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
         background-size: contain;
-        margin-right: 20px;
+        border-radius: 50%;
+        border: 0.01px solid  rgba(167, 161, 161, 0.747);
+        background-image: url('../assets/EmployeeImage.png') ;
     }
-    .user__info .icon {
-        width: 20px;       
-        height: 20px;
-        background-image: url('../assets/icon/option.png');
-        margin-left: 15px;
-        margin-top: 5px;
+    .selection {
+        padding: 0px;
     }
-    .user__info .user__name{
-        margin-top: 5px;
+    .support_icon {
+        width: 60px;
+        height: 40px;
+        background-image: url('../assets/phoneCall.png') ;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .notification_icon {
+        width: 40px;
+        height: 40px;
+        background-image: url('../assets/noti_icon.webp') ;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 0.02px solid rgba(214, 208, 208, 0.555);
+    }
+    .questionMark_icon {
+        width: 40px;
+        height: 40px;
+        background-image: url('../assets/ques_icon.jpg') ;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 0.02px solid rgba(214, 208, 208, 0.555);
+    }
+    .address {
+        margin-left: 624px;
+        margin-right: 10px;
     }
 </style>

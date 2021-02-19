@@ -42,8 +42,8 @@ export default {
 
 <style scoped>
     .menu{
-        width: 172px;
-        height: 100vh;
+        width: 200px;
+        height: 98vh;
         margin: 0px;
         background-color: #212191db;
     }

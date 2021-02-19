@@ -1,44 +1,25 @@
 <template>
   <div id="app1" v-bind:class="{handleDialog: showDialog }">
       <Menu />
+      <Header />
+      <Content />
   </div>
 </template>
 
 <script>
 import Menu from './components/menu';
+import Header from './components/header';
+import Content from './components/content';
 
 export default {
   name: 'App',
   components: {
     Menu,
+    Header,
+    Content
   },
   data() {
     return {
-      content : [
-      ],
-      cusInfo:[
-        {
-          BaseSalary:"", 
-          Category:"", 
-          DateJoinFirm:"", 
-          DateOfBirth:"", 
-          Email:"", 
-          EmployeeCode:"", 
-          EmployeeId:"", 
-          FullName:"", 
-          Gender:"", 
-          GivenDate:"", 
-          GivenPlace:"", 
-          IdentityCard:"", 
-          PersonalTax:"", 
-          PhoneNumber:"", 
-          Position:"", 
-          WorkStatus:"", 
-        },
-      ],
-      showDialog: false,
-      affectedByDiaStt: true,
-      showEditEmInfoDia: false,
     }
   },
   methods: {
