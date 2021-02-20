@@ -17,7 +17,6 @@
             <div class="notification_icon"></div>
             <div class="questionMark_icon"></div>
         </div>
-        
     </div>
 </template>
 <script>

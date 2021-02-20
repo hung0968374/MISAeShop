@@ -1,6 +1,7 @@
 <template>
     <div class="content_part">
-        <userChoice v-on:shopFormDiaSttOpened ="openShopForm"/>
+        <userChoice v-on:shopFormDiaSttOpened ="openShopForm"
+                    v-on:openDeleteDialog = "openDeleteDialog"/>
         <shopProp />
         <div class="inputField">
             <div class="shopCode_input">
@@ -60,7 +61,10 @@ export default {
     methods: {
         openShopForm(){
             this.$emit('openShopForm');
-        }
+        },
+        openDeleteDialog: function(){
+            this.$emit('openDeleteDialog');
+        },
     },
     data() {
         return {

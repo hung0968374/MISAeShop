@@ -1,9 +1,11 @@
 <template>
-  <div id="app1" v-bind:class="{handleDialog: showDialog }">
+  <div id="app1" v-bind:class="{handleDialog: showShopPropDialog, handleDelDia: showDeletingDialog }">
       <Menu />
       <Header />
-      <Content v-on:openShopForm = "openShopInfoForm" />
-      <dialogShopInfoForm v-if="showDialog"/>
+      <Content v-on:openShopForm = "openShopInfoForm" 
+               v-on:openDeleteDialog = "openDeleteDialog"/>
+      <dialogShopInfoForm v-if="showShopPropDialog"/>
+      <deletingDia v-if="showDeletingDialog" />
   </div>
 </template>
 
@@ -12,22 +14,28 @@ import Menu from './components/menu';
 import Header from './components/header';
 import Content from './components/content';
 import dialogShopInfoForm from './components/dialogShopInfoForm';
+import deletingDia from './components/deletingDia';
 export default {
   name: 'App',
   components: {
     Menu,
     Header,
     Content,
-    dialogShopInfoForm
+    dialogShopInfoForm,
+    deletingDia
   },
   data() {
     return {
-      showDialog: true,
+      showShopPropDialog: false,
+      showDeletingDialog: true,
     }
   },
   methods: {
     openShopInfoForm: function(){
-      this.showDialog = !this.showDialog;
+      this.showShopPropDialog = !this.showShopPropDialog;
+    },
+    openDeleteDialog:function(){
+      this.showDeletingDialog = !this.showDeletingDialog;
     }
   },
   async created (){
@@ -45,6 +53,9 @@ export default {
     height: 98vh;
   }
   .handleDialog {
+    background-color: #2c060654;
+  }
+  .handleDelDia {
     background-color: #2c060654;
   }
 </style>

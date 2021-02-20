@@ -19,12 +19,10 @@
       <div class="shopPhone_TaxCode">
         <div class="shopPhone">
           Số điện thoại
-          <span class="redStarIcon" style="margin-left: 5px">*</span>
           <input type="text" class="input1" style="width: 200px; height: 35px">
         </div>
         <div class="shopTaxCode">
           Mã số thuế
-          <span class="redStarIcon" style="margin-left: 5px">*</span>
           <input type="text" style="width: 200px; height: 35px">
         </div>
       </div>
@@ -63,9 +61,26 @@
           </select>
         </div>
         <div class="shopRoad">Đường phố
-          <span class="redStarIcon">*</span>
           <input type="text"  style="width: 200px; height: 35px">
         </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="helping">
+        <div class="helping_icon"></div>
+        Tro giup
+      </div>
+      <div class="saving">
+        <div class="saving_icon"></div>
+        luu
+      </div>
+      <div class="saveAndAdd">
+        <div class="saveAndAdd_icon"></div>
+        luu va them moi
+      </div>
+      <div class="cancel">
+        <div class="cancel_icon"></div>
+        Huy bo
       </div>
     </div>
   </div>
@@ -82,14 +97,15 @@ export default {
 <style scoped>
   .dialog {
     height: 600px;
-    width: 700px;
+    width: 680px;
     background: white;
     z-index: 3;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 2px;
+    overflow-x: scroll;
+    border-radius: 5px;
   }
   .title {
     height: 40px;
@@ -172,7 +188,7 @@ export default {
   .shopTaxCode {
     position: relative;
     top: 15px;
-    left: 249px;
+    left: 275px;
   }
   select {
     border: 1px solid black;
@@ -185,6 +201,65 @@ export default {
   .shopRoad {
     position: relative;
     top: 15px;
-    left: 282px;
+    left: 290px;
+  }
+  .footer {
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 0.5px solid darkgray;
+    font-size: 18px;
+  }
+  .helping {
+    display: flex;
+    align-items: center;
+  }
+  .saving {
+    display: flex;
+    height: 15px;
+    padding: 10px;
+     align-items: center;
+     background: darkblue;
+     margin-left: 180px;
+     color: white;
+  }
+  .saveAndAdd {
+    display: flex;
+    align-items: center;
+     margin-left: 22px;
+     height: 15px;
+     padding: 10px;
+     border: 1px solid darkblue;
+     color: darkblue;
+     border-radius: 3px;
+     margin-right: 30px;
+  }
+  .cancel {
+    display: flex;
+     align-items: center;
+    }
+  .helping_icon {
+    background: url('../assets/common-icon.png') no-repeat -179px -179px;
+	width: 12px;
+	height: 12px;
+  margin-right: 10px;
+  }
+  .saving_icon {
+    background: url('../assets/common-icon.png') no-repeat -330px -129px;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+  }
+  .saveAndAdd_icon {
+    background: url('../assets/common-icon.png') no-repeat   -29px -130px;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+  }
+  .cancel_icon {
+    background: url('../assets/common-icon.png') no-repeat  -255px -130px;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
   }
 </style>
