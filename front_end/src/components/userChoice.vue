@@ -3,7 +3,7 @@
     <div class="user_choice">
       <div class="adding_new">
         <div class="adding_icon"></div>
-        <div class="adding_content">Thêm mới</div>
+        <div class="adding_content" v-on:click = "changingDiaShopFormStt">Thêm mới</div>
       </div>
       <div class="clone">
         <div class="clone_icon"></div>
@@ -27,6 +27,11 @@
 <script>
 export default {
   name: "userChoice",
+  methods: {
+    changingDiaShopFormStt: function(){
+      this.$emit('shopFormDiaSttOpened');
+    }
+  }
 };
 </script>
 <style scoped>

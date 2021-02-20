@@ -1,6 +1,6 @@
 <template>
     <div class="content_part">
-        <userChoice/>
+        <userChoice v-on:shopFormDiaSttOpened ="openShopForm"/>
         <shopProp />
         <div class="inputField">
             <div class="shopCode_input">
@@ -33,33 +33,34 @@
                 </tr>
             </thead>
             <tbody>
-                <td>2131321</td>
-                <td>3123123</td>
-                <td>123213</td>
-                <td>123213</td>
-                <td>123</td>
-                <td>12323</td>
-                <td>1233</td>
-                <td>12323</td>
-                <td>123312</td>
+                <td class="shopCode_column">2131321</td>
+                <td class="shopName_column">3123123</td>
+                <td class="shopAddress_column">123213</td>
+                <td class="shopPhoneNum_column">123213</td>
+                <td class="shopStt_column">123</td>
             </tbody>
         </table>
+        <pageFooter />
     </div>
 </template>
 <script>
 import userChoice from './userChoice';
 import shopProp from './shopProp';
+import pageFooter from './pageFooter';
 export default {
     name:'Content',
     components: {
       userChoice,
-      shopProp
+      shopProp,
+      pageFooter
     },
     computed:{
        
     },
     methods: {
-        
+        openShopForm(){
+            this.$emit('openShopForm');
+        }
     },
     data() {
         return {
@@ -81,6 +82,7 @@ export default {
         bottom: 0px;
         right: 0px;
         background-color: #efeeee;
+        width: 1322px;
    }
    .shopTable {
        width: 98.5%;
@@ -88,6 +90,9 @@ export default {
        margin-right: 10px;
        border: 1px solid red;
        border-collapse: collapse;
+   }
+   .shopTable td {
+       border: 1px solid green;
    }
    .inputField {
        display: flex;
@@ -123,15 +128,29 @@ export default {
        width: 113px;
    }
     .name_input {
-       width: 204.4px;
+       width: 201.4px;
    }
     .address_input {
-       width: 489px;
+       width: 483px;
    }
     .phone_input {
-       width: 135px;
+       width: 132px;
    }
     .stt_selection {
         width: 181px;
+    }
+    .shopCode_column {
+        width: 158px;
+    }
+    .shopName_column {
+        width: 249px;
+    }
+    .shopAddress_column {
+        width: 535px;
+    }
+    .shopPhoneNum_column {
+        width: 181px;
+    }
+    .shopStt_column {
     }
 </style>

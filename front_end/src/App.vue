@@ -2,7 +2,8 @@
   <div id="app1" v-bind:class="{handleDialog: showDialog }">
       <Menu />
       <Header />
-      <Content />
+      <Content v-on:openShopForm = "openShopInfoForm" />
+      <dialogShopInfoForm v-if="showDialog"/>
   </div>
 </template>
 
@@ -10,20 +11,24 @@
 import Menu from './components/menu';
 import Header from './components/header';
 import Content from './components/content';
-
+import dialogShopInfoForm from './components/dialogShopInfoForm';
 export default {
   name: 'App',
   components: {
     Menu,
     Header,
-    Content
+    Content,
+    dialogShopInfoForm
   },
   data() {
     return {
+      showDialog: true,
     }
   },
   methods: {
-    
+    openShopInfoForm: function(){
+      this.showDialog = !this.showDialog;
+    }
   },
   async created (){
    
@@ -40,6 +45,6 @@ export default {
     height: 98vh;
   }
   .handleDialog {
-    background-color: #69696954;
+    background-color: #2c060654;
   }
 </style>
