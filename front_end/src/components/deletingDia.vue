@@ -4,7 +4,7 @@
             <div class="til">
                 <p><strong>Xóa dữ liệu</strong></p>
             </div>
-            <div class="x_icon">X</div>
+            <div class="x_icon" @click="closeDelDia">X</div>
         </div>
         <div class="question">
             <div class="question_icon"></div>
@@ -15,7 +15,7 @@
                 <div class="del_icon"></div>
                 xoa
             </div>
-            <div class="cancel">
+            <div class="cancel" @click="closeDelDia">
                 <div class="cancel_icon"></div>
                 Huy bo
             </div>
@@ -25,7 +25,12 @@
 
 <script>
 export default {
-    name:'deletingDia'
+    name:'deletingDia',
+    methods: {
+        closeDelDia: function(){
+            this.$emit("closeDelDia");
+        }
+    }
 }
 </script>
 <style scoped>

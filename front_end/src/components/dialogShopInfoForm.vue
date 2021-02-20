@@ -1,7 +1,7 @@
 <template>
   <div class="dialog">
     <div class="title"><strong>Thêm mới cửa hàng</strong>
-      <span class="x_icon">X</span>
+      <span class="x_icon" @click="closeShopInfoDia">X</span>
     </div>
     <div class="shopPropInfo">
       <div class="shopCode">Mã cửa hàng 
@@ -78,7 +78,7 @@
         <div class="saveAndAdd_icon"></div>
         luu va them moi
       </div>
-      <div class="cancel">
+      <div class="cancel"  @click="closeShopInfoDia">
         <div class="cancel_icon"></div>
         Huy bo
       </div>
@@ -91,7 +91,11 @@ export default {
   props:{
 
   },
-
+  methods: {
+    closeShopInfoDia: function(){
+      this.$emit("closeShopInfoDia");
+    }
+  }
 }
 </script>
 <style scoped>

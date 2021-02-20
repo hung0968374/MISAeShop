@@ -4,8 +4,9 @@
       <Header />
       <Content v-on:openShopForm = "openShopInfoForm" 
                v-on:openDeleteDialog = "openDeleteDialog"/>
-      <dialogShopInfoForm v-if="showShopPropDialog"/>
-      <deletingDia v-if="showDeletingDialog" />
+      <dialogShopInfoForm v-if="showShopPropDialog"
+      v-on:closeShopInfoDia = "closeShopInfoDia"/>
+      <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" />
   </div>
 </template>
 
@@ -27,7 +28,7 @@ export default {
   data() {
     return {
       showShopPropDialog: false,
-      showDeletingDialog: true,
+      showDeletingDialog: false,
     }
   },
   methods: {
@@ -35,6 +36,12 @@ export default {
       this.showShopPropDialog = !this.showShopPropDialog;
     },
     openDeleteDialog:function(){
+      this.showDeletingDialog = !this.showDeletingDialog;
+    },
+    closeShopInfoDia:function(){
+       this.showShopPropDialog = !this.showShopPropDialog;
+    },
+    closeDelDia:function(){
       this.showDeletingDialog = !this.showDeletingDialog;
     }
   },
