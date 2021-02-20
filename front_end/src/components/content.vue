@@ -1,14 +1,59 @@
 <template>
     <div class="content_part">
         <userChoice/>
+        <shopProp />
+        <div class="inputField">
+            <div class="shopCode_input">
+                <div class="squareIcon">*</div>
+                <input type="text" class="code_input">
+            </div>
+             <div class="shopName_input">
+                <div class="squareIcon">*</div>
+                <input type="text" class="name_input">
+            </div>
+             <div class="shopAddress_input">
+                <div class="squareIcon">*</div>
+                <input type="text" class="address_input">
+            </div>
+             <div class="shopPhoneNum_input">
+                <div class="squareIcon">*</div>
+                <input type="text" class="phone_input">
+            </div>
+             <div class="shopStatus_input">
+                <select class="stt_selection">
+                    <option value="">Dang hoat dong</option>
+                    <option value="">Da dong cua</option>
+                </select>
+            </div>
+        </div>
+        <table class="shopTable">
+            <thead>
+                <tr>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <td>2131321</td>
+                <td>3123123</td>
+                <td>123213</td>
+                <td>123213</td>
+                <td>123</td>
+                <td>12323</td>
+                <td>1233</td>
+                <td>12323</td>
+                <td>123312</td>
+            </tbody>
+        </table>
     </div>
 </template>
 <script>
 import userChoice from './userChoice';
+import shopProp from './shopProp';
 export default {
     name:'Content',
     components: {
       userChoice,
+      shopProp
     },
     computed:{
        
@@ -37,4 +82,56 @@ export default {
         right: 0px;
         background-color: #efeeee;
    }
+   .shopTable {
+       width: 98.5%;
+       margin-left: 10px;
+       margin-right: 10px;
+       border: 1px solid red;
+       border-collapse: collapse;
+   }
+   .inputField {
+       display: flex;
+       width: 1100px;
+       margin-left: 10px;
+       margin-right: 10px;
+       background: chartreuse;
+       height: 30px;
+   }
+   .shopCode_input {
+       display: flex;
+   }
+   .shopName_input {
+       display: flex;
+   }
+   .shopAddress_input {
+       display: flex;
+   }
+   .shopPhoneNum_input {
+       display: flex;
+   }
+    .shopStatus_input {
+       display: flex;
+   }
+   .squareIcon {
+       width: 40px;
+       background: darkgray;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   .code_input {
+       width: 113px;
+   }
+    .name_input {
+       width: 204.4px;
+   }
+    .address_input {
+       width: 489px;
+   }
+    .phone_input {
+       width: 135px;
+   }
+    .stt_selection {
+        width: 181px;
+    }
 </style>

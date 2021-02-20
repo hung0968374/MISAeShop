@@ -65,6 +65,7 @@ export default {
         border-radius: 50%;
         border: 0.01px solid  rgba(167, 161, 161, 0.747);
         background-image: url('../assets/EmployeeImage.png') ;
+        margin-top: -2px;
     }
     .selection {
         padding: 0px;
