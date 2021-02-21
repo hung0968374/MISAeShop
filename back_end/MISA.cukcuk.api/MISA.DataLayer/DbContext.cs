@@ -13,10 +13,10 @@ namespace MISA.DataLayer
     {
         #region DECLARE
         protected string _connectionString = "" +
-            "Host = 103.124.92.43;" +
+            "Host = 47.241.69.179;" +
             "Port = 3306;" +
-            "Database = MS1_17_NguyenHuuHung_CukCuk;" +
-            "User Id = nvmanh;" +
+            "Database = MF717-NhHung_CukCuk;" +
+            "User Id = dev;" +
             "Password = 12345678;";
         protected IDbConnection _dbConnection;
         #endregion

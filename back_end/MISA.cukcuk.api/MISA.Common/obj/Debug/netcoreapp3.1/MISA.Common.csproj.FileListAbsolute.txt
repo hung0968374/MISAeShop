@@ -9,3 +9,14 @@ E:\Học Tập\my project\misa\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\ne
 E:\Học Tập\my project\misa\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.pdb
 E:\Học Tập\my project\misa\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.Properties.Resources.resources
 E:\Học Tập\my project\misa\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.GenerateResource.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.deps.json
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.dll
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csprojAssemblyReference.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.Properties.Resources.resources
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.GenerateResource.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfoInputs.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfo.cs
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.CoreCompileInputs.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.dll
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.pdb

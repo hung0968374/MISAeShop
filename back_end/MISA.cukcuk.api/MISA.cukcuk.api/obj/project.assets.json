@@ -1587,19 +1587,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\MISA.cukcuk.api.csproj",
+      "projectUniqueName": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\MISA.cukcuk.api.csproj",
       "projectName": "MISA.cukcuk.api",
-      "projectPath": "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\MISA.cukcuk.api.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\obj\\",
+      "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\MISA.cukcuk.api.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.cukcuk.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1613,11 +1613,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
-              "projectPath": "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
+            "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
+              "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
             },
-            "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {
-              "projectPath": "E:\\Học Tập\\my project\\misa\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj"
+            "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {
+              "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj"
             }
           }
         }
@@ -1677,7 +1677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
