@@ -34,5 +34,8 @@ namespace MISA.DataLayer.InterMiLan
         {
             return -9999;
         }
+        public int Delete(object entity, string code) {
+            return 1;
+        }
     }
 }

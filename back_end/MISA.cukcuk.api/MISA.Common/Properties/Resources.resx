@@ -123,7 +123,16 @@
   <data name="ErrorService_DuplicateCustomerPhoneNumber" xml:space="preserve">
     <value>Số điện thoại của khách hàng đã được dùng, vui lòng kiểm tra lại</value>
   </data>
+  <data name="ErrorService_DuplicateEShopCode" xml:space="preserve">
+    <value>Mã cửa hàng đã được sử dụng</value>
+  </data>
+  <data name="ErrorService_DuplicateEShopPhone" xml:space="preserve">
+    <value>Số điện thoại cửa hàng đã được sử dụng</value>
+  </data>
   <data name="ErrorService_EmptyCustomerCode" xml:space="preserve">
     <value>Mã khách hàng không được phép để trống</value>
+  </data>
+  <data name="ErrorService_EmptyEShopCode" xml:space="preserve">
+    <value>Mã cửa hàng không được để trống</value>
   </data>
 </root>

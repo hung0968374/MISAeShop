@@ -43,6 +43,7 @@ namespace MISA.cukcuk.api
             // Cấu hình DI
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IEShopService, EShopService>();
             services.AddScoped(typeof(IBaseData<>), typeof(DbContext<>));
 
         }

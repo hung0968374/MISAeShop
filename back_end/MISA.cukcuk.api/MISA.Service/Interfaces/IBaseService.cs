@@ -9,5 +9,6 @@ namespace MISA.Service.Interfaces
     {
         ServiceResult GetData();
         ServiceResult Insert(MISAEntity entity);
+        ServiceResult Delete(MISAEntity entity, string Code);
     }
 }

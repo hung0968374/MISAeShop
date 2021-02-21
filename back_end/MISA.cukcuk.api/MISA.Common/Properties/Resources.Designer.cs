@@ -79,11 +79,38 @@ namespace MISA.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mã cửa hàng đã được sử dụng.
+        /// </summary>
+        public static string ErrorService_DuplicateEShopCode {
+            get {
+                return ResourceManager.GetString("ErrorService_DuplicateEShopCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Số điện thoại cửa hàng đã được sử dụng.
+        /// </summary>
+        public static string ErrorService_DuplicateEShopPhone {
+            get {
+                return ResourceManager.GetString("ErrorService_DuplicateEShopPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mã khách hàng không được phép để trống.
         /// </summary>
         public static string ErrorService_EmptyCustomerCode {
             get {
                 return ResourceManager.GetString("ErrorService_EmptyCustomerCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mã cửa hàng không được để trống.
+        /// </summary>
+        public static string ErrorService_EmptyEShopCode {
+            get {
+                return ResourceManager.GetString("ErrorService_EmptyEShopCode", resourceCulture);
             }
         }
     }

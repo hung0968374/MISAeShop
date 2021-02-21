@@ -15,7 +15,7 @@ namespace MISA.Common.Model
         /// </summary>
         public bool Success { get; set; }
         public object Data { get; set; }
-        public string MISACode { get; set; }
+        public int MISACode { get; set; }
 
     }
 }

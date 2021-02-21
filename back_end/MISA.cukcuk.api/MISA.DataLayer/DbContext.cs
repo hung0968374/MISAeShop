@@ -9,7 +9,7 @@ using System.Text;
 
 namespace MISA.DataLayer
 {
-    public class DbContext<MISAEntity>:IBaseData<MISAEntity>
+    public class DbContext<MISAEntity> : IBaseData<MISAEntity>
     {
         #region DECLARE
         protected string _connectionString = "" +
@@ -36,7 +36,7 @@ namespace MISA.DataLayer
             return entities;
         }
         #region method
-        public IEnumerable<MISAEntity> GetAll(string sqlCommand , CommandType commandType = CommandType.Text)
+        public IEnumerable<MISAEntity> GetAll(string sqlCommand, CommandType commandType = CommandType.Text)
         {
             var entities = _dbConnection.Query<MISAEntity>(sqlCommand, commandType: commandType);
             return entities;
@@ -88,15 +88,22 @@ namespace MISA.DataLayer
                     //propValue = Guid.NewGuid();
                     property.SetValue(entity, Guid.NewGuid());
                 }
-                
+
                 sqlPropName = sqlPropName + $",{propName}";
                 sqlPropParam = sqlPropParam + $",@{propName}";
                 //dynamicParameters.Add($"@{propName}", propValue);
             }
             sqlPropName = sqlPropName.Remove(0, 1);
-            sqlPropParam = sqlPropParam.Remove(0, 1);   
+            sqlPropParam = sqlPropParam.Remove(0, 1);
             sqlCommand = $"Insert into {className} ({sqlPropName}) values ({sqlPropParam})";
-            var res = _dbConnection.Execute(sqlCommand,param: entity, commandType: CommandType.Text);
+            var res = _dbConnection.Execute(sqlCommand, param: entity, commandType: CommandType.Text);
+            return res;
+        }
+        public int Delete(object entity, string code)
+        {
+            var className = typeof(MISAEntity).Name;
+            var sqlCommand = $"delete from {className} where {className}Id = '{code}'";
+            var res = _dbConnection.Execute(sqlCommand);
             return res;
         }
         #endregion

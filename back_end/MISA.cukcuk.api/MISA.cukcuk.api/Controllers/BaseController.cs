@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MISA.Common.Model;
 using MISA.Service;
 using MISA.Service.Interfaces;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +20,7 @@ namespace MISA.cukcuk.api.Controllers
         IBaseService<MISAEntity> _baseService;
         public BaseController(IBaseService<MISAEntity> baseService)
         {
-            _baseService = baseService; 
+            _baseService = baseService;
         }
         [HttpGet]
         public IActionResult Get()
@@ -43,12 +46,37 @@ namespace MISA.cukcuk.api.Controllers
             }
             else if (res.Success == true && (int)res.Data > 0)
             {
-                return StatusCode(201, res.Data);
+                return StatusCode(201, res);
             }
             else
             {
-                return StatusCode(200, res.Data);
+                return StatusCode(200, res);
             }
+        }
+
+
+        //var res = _baseService.Delete(entity, code);
+        //return Ok(res);
+
+
+        [HttpDelete("{eShopCode}")]
+        public IActionResult Delete(MISAEntity entity,  Guid eShopCode)
+        {
+            //var connectionString = "" +
+            //"Host = 47.241.69.179;" +
+            //"Port = 3306;" +
+            //"Database = MF717-NhHung_CukCuk;" +
+            //"User Id = dev;" +
+            //"Password = 12345678;";
+            //var shopCode = eShopCode.ToString();
+            //IDbConnection dbConnection = new MySqlConnection(connectionString);
+            //var className = typeof(MISAEntity).Name;
+            //var sqlCommand = $"delete from {className} where {className}Id = '{shopCode}'";
+            //var res = dbConnection.Execute(sqlCommand);
+            //return Ok(res);
+
+            var res = _baseService.Delete(entity, eShopCode.ToString());
+            return Ok(res);
         }
     }
 }

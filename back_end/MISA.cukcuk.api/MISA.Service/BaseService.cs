@@ -25,6 +25,12 @@ namespace MISA.Service
             serviceResult.Data = _dbContext.GetAll();
             return serviceResult;
         }
+        public virtual ServiceResult Delete(MISAEntity entity, string code)
+        {
+            var serviceResult = new ServiceResult();
+            serviceResult.Data = _dbContext.Delete(entity, code);
+            return serviceResult;
+        }
         /// <summary>
         /// THêm mới dữ liệu
         /// </summary>
@@ -43,12 +49,14 @@ namespace MISA.Service
                 if (res > 0)
                 {
                     serviceResult.Success = true;
+                    serviceResult.MISACode = 200;
                     serviceResult.Data = res;
                     return serviceResult;
                 }
                 else
                 {
                     serviceResult.Success = true;
+                    serviceResult.MISACode = 200;
                     serviceResult.Data = res;
                     return serviceResult;
                 } 
@@ -56,6 +64,7 @@ namespace MISA.Service
             else
             {
                 serviceResult.Success = false;
+                errorMsg.MISACode = 400;
                 serviceResult.Data = errorMsg;
             }
             return serviceResult;

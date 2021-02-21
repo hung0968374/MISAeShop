@@ -6,7 +6,7 @@ namespace MISA.cukcuk.api.Controllers
 {
     public class EShopsController : BaseController<EShop>
     {
-        public EShopsController(IBaseService<EShop> EShopService) : base(EShopService) { 
+        public EShopsController(IEShopService eShopService) : base(eShopService) { 
 
         }
     }
