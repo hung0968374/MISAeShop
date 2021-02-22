@@ -15,6 +15,7 @@ using MISA.DataLayer.InterMiLan;
 using MISA.Service;
 using MISA.Service.Interfaces;
 using MISA.Service.Services;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace MISA.cukcuk.api
         {
 
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.cukcuk.api", Version = "v1" });
@@ -45,7 +47,10 @@ namespace MISA.cukcuk.api
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IEShopService, EShopService>();
             services.AddScoped(typeof(IBaseData<>), typeof(DbContext<>));
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +62,7 @@ namespace MISA.cukcuk.api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.cukcuk.api v1"));
             }
+            app.UseCors(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             ///xử lý exception chung
             app.UseExceptionHandler(a => a.Run(async context =>
             {
