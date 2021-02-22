@@ -145,8 +145,8 @@ namespace MISA.cukcuk.api.Controllers
         //return Ok(res);
 
 
-        [HttpDelete("{eShopCode}")]
-        public IActionResult Delete(MISAEntity entity,  Guid eShopCode)
+        [HttpDelete("{eShopId}")]
+        public IActionResult Delete(MISAEntity entity,  Guid eShopId)
         {
             //var connectionString = "" +
             //"Host = 47.241.69.179;" +
@@ -161,7 +161,26 @@ namespace MISA.cukcuk.api.Controllers
             //var res = dbConnection.Execute(sqlCommand);
             //return Ok(res);
 
-            var res = _baseService.Delete(entity, eShopCode.ToString());
+            var res = _baseService.Delete(entity, eShopId.ToString());
+            return Ok(res);
+        }
+        [HttpDelete("delete/{eShopCode}")]
+        public IActionResult DeleteShopCode(MISAEntity entity, string eShopCode)
+        {
+            //var connectionString = "" +
+            //"Host = 47.241.69.179;" +
+            //"Port = 3306;" +
+            //"Database = MF717-NhHung_CukCuk;" +
+            //"User Id = dev;" +
+            //"Password = 12345678;";
+            //var shopCode = eShopCode.ToString();
+            //IDbConnection dbConnection = new MySqlConnection(connectionString);
+            //var className = typeof(MISAEntity).Name;
+            //var sqlCommand = $"delete from {className} where {className}Id = '{shopCode}'";
+            //var res = dbConnection.Execute(sqlCommand);
+            //return Ok(res);
+
+            var res = _baseService.DeleteEShopCode(entity, eShopCode);
             return Ok(res);
         }
     }

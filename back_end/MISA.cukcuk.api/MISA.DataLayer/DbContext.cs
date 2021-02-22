@@ -176,6 +176,13 @@ namespace MISA.DataLayer
             var res = _dbConnection.Execute(sqlCommand);
             return res;
         }
+        public int DeleteEShopCode(object entity, string code)
+        {
+            var className = typeof(MISAEntity).Name;
+            var sqlCommand = $"delete from {className} where {className}Code = '{code}'";
+            var res = _dbConnection.Execute(sqlCommand);
+            return res;
+        }
         #endregion
     }
 }

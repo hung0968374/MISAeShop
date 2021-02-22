@@ -6,19 +6,19 @@
         <div class="inputField">
             <div class="shopCode_input">
                 <div class="squareIcon">*</div>
-                <input type="text" class="code_input">
+                <input type="text" class="code_input" @keyup.enter="sortByCode" v-model="shopCode">
             </div>
              <div class="shopName_input">
                 <div class="squareIcon">*</div>
-                <input type="text" class="name_input">
+                <input type="text" class="name_input"  @keyup.enter="sortByName" v-model="shopName">
             </div>
              <div class="shopAddress_input">
                 <div class="squareIcon">*</div>
-                <input type="text" class="address_input">
+                <input type="text" class="address_input" >
             </div>
              <div class="shopPhoneNum_input">
                 <div class="squareIcon">*</div>
-                <input type="text" class="phone_input">
+                <input type="text" class="phone_input"  @keyup.enter="sortByPhone" v-model="shopPhone">
             </div>
              <div class="shopStatus_input">
                 <select class="stt_selection" @change="sttOnChange" v-model="shopStt">
@@ -36,7 +36,9 @@
                 </thead>
                 <tbody>
                     <tr :key = "listData.eShopId" v-for="listData in listDatas" class="hoverShopInfo"
-                    @dblclick="$emit('deleteThisShop', listData.eShopId)" @mouseup.right="del">
+                    @mouseup.right="$emit('deleteThisShop',
+                     {eShopCode : listData.eShopCode,
+                     eShopName:listData.eShopName} )">
                         <td class="shopCode_column">{{listData.eShopCode}}</td>
                         <td class="shopName_column">{{listData.eShopName}}</td>
                         <td class="shopAddress_column">{{listData.eShopAddress}}</td>
@@ -53,6 +55,7 @@
 import userChoice from './userChoice';
 import shopProp from './shopProp';
 import pageFooter from './pageFooter';
+// import axios from 'axios';
 export default {
     name:'Content',
     components: {
@@ -83,12 +86,32 @@ export default {
                 this.shopSttContent = "Đã đóng cửa";
             }
             this.$emit('sortByStt',this.shopSttContent);
-        }
+        },
+        sortByName(){
+            this.$emit("sortByName", this.shopName);
+        },
+        sortByCode(){
+            this.$emit("sortByShopCode", this.shopCode);
+        },
+        sortByPhone(){
+            this.$emit("sortByPhone", this.shopPhone);
+        },
+            // console.log(shopCode);
+            // const response =  axios.delete('http://localhost:57752/api/v1/EShops/delete/' + shopCode);
+            // console.log(response);
+            // const response = await axios.delete('http://localhost:57752/api/v1/EShops/delete/' + shopCode, {
+            //     data: {foo: 'bar'}
+            // });
+            // console.log(response);
     },
     data() {
         return {
             shopStt: 0,
             shopSttContent: "",
+            shopCode:"",
+            shopName: "",
+            shopAddress:"",
+            shopPhone:"",
         }
     },
     filters: {

@@ -61,6 +61,12 @@ namespace MISA.Service
             serviceResult.Data = _dbContext.Delete(entity, code);
             return serviceResult;
         }
+        public virtual ServiceResult DeleteEShopCode(MISAEntity entity, string code)
+        {
+            var serviceResult = new ServiceResult();
+            serviceResult.Data = _dbContext.DeleteEShopCode(entity, code);
+            return serviceResult;
+        }
         /// <summary>
         /// THêm mới dữ liệu
         /// </summary>

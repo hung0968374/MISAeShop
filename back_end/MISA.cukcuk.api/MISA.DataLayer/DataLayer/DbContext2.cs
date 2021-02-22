@@ -37,6 +37,10 @@ namespace MISA.DataLayer.InterMiLan
         public int Delete(object entity, string code) {
             return 1;
         }
+        public int DeleteEShopCode(object entity, string code)
+        {
+            return 1;
+        }
         public IEnumerable<MISAEntity> GetByFilteringShopCode(string code) {
             var className = typeof(MISAEntity).Name;
 

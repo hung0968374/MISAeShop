@@ -36,7 +36,7 @@ namespace MISA.cukcuk.api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            //services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen(c =>
             {

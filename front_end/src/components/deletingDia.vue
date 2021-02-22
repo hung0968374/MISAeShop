@@ -8,29 +8,40 @@
         </div>
         <div class="question">
             <div class="question_icon"></div>
-            <div class="content">ban co chac muon xoa .... khoi danh sach khach hang</div>
+            <div class="content">Bạn có chắc muốn xóa {{this.deleteEShopName}} khỏi danh sách khách hàng?</div>
         </div>
         <div class="footer">
-            <div class="deleting">
+            <div class="deleting" @click="deleteShop">
                 <div class="del_icon"></div>
-                xoa
+                Xóa
             </div>
             <div class="cancel" @click="closeDelDia">
                 <div class="cancel_icon"></div>
-                Huy bo
+                Hủy bỏ
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name:'deletingDia',
     methods: {
         closeDelDia: function(){
             this.$emit("closeDelDia");
+        },
+        async deleteShop(){
+            console.log(this.deleteEShopCode);
+            const response = await axios.delete('http://localhost:57752/api/v1/EShops/delete/' + this.deleteEShopCode, {
+                data: {foo: 'bar'}
+            });
+            console.log(response);
+            this.$emit("closeDelDia");
         }
-    }
+    },
+    props:[ "deleteEShopCode","deleteEShopName"],
+
 }
 </script>
 <style scoped>

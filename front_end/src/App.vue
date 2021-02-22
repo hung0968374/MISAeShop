@@ -3,14 +3,20 @@
       <Menu />
       <Header />
       <Content :listDatas = "this.data"
+                
                 v-on:openShopForm = "openShopInfoForm" 
                 v-on:deleteThisShop = "deleteShop"
                v-on:openDeleteDialog = "openDeleteDialog"
                v-on:sortByStt = "sortByShopStt"
+               v-on:sortByShopCode = "sortByShopCode"
+               v-on:sortByName = "sortShopByName"
+               v-on:sortByPhone = "sortShopByPhone"
                 />
       <dialogShopInfoForm v-if="showShopPropDialog"
       v-on:closeShopInfoDia = "closeShopInfoDia"/>
-      <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" />
+      <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" 
+      :deleteEShopName = "deleteEShopName"
+      :deleteEShopCode = "deleteEshopCode" />
   </div>
 </template>
 
@@ -34,15 +40,17 @@ export default {
     return {
       showShopPropDialog: false,
       showDeletingDialog: false,
-      data:[]
+      data:[],
+      deleteEShopName:"",
+      deleteEshopCode:"",
     }
   },
   methods: {
     async deleteShop(payLoad){
-      console.log(payLoad);
-      //const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByPhoneNumber?filterString=' + '095')
-      const response = await axios.delete('http://localhost:57752/api/v1/EShops/' + payLoad)
-      console.log(response);
+      console.log(payLoad.eShopCode+" " + payLoad.eShopName);
+      this.deleteEShopName = payLoad.eShopName;
+      this.deleteEshopCode = payLoad.eShopCode;
+      this.showDeletingDialog = true;
     },
     openShopInfoForm: function(){
       this.showShopPropDialog = !this.showShopPropDialog;
@@ -61,7 +69,25 @@ export default {
       const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByShopStatus?filterString=' + url);
       console.log(res.data);
       this.data = res.data;
-    }
+    },
+    async sortByShopCode(url){
+      console.log(url);
+      const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByCode?sortByShopCode=' + url);
+      console.log(res.data);
+      this.data = res.data;
+    },
+    async sortShopByName(url){
+      console.log(url);
+      const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByName?sortByShopName=' + url);
+      console.log(res.data);
+      this.data = res.data;
+    },
+    async sortShopByPhone(url){
+      console.log(url);
+      const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByPhoneNumber?filterString=' + url);
+      console.log(res.data);
+      this.data = res.data;
+    },
   },
   async created (){
       const response = await axios.get('http://localhost:57752/api/v1/EShops')
