@@ -44,5 +44,36 @@ namespace MISA.Service
             }
             return isValid;
         }
+        protected override bool ValidateDataForPutMethod(EShop eShop, ErrorMsg errorMsg = null, string objectId = null)
+        {
+            var dbContext = new EShopRepostory();
+            var isValid = true;
+            // validate ma cua hang
+            if (eShop.eShopCode == null || eShop.eShopCode == string.Empty)
+            {
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopCode);
+                isValid = false;
+            }
+            if (eShop.eShopPhoneNumber == null || eShop.eShopPhoneNumber == string.Empty)
+            {
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopPhone);
+                isValid = false;
+            }
+            /// validate trung ma code cua hang
+            var shopCodeExisted = dbContext.checkShopCodeExistedOrNot(eShop.eShopCode, objectId);
+            if (shopCodeExisted == true)
+            {
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_DuplicateEShopCode);
+                isValid = false;
+            }
+            //validate trung sdt
+            var phoneExisted = dbContext.checkShopPhoneExistedOrNot(eShop.eShopPhoneNumber, objectId);
+            if (phoneExisted == true)
+            {
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_DuplicateEShopPhone);
+                isValid = false;
+            }
+            return isValid;
+        }
     }
 }

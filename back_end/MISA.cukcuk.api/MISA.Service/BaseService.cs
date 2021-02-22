@@ -99,7 +99,7 @@ namespace MISA.Service
             var serviceResult = new ServiceResult();
             var errorMsg = new ErrorMsg();
             //Xử lý nghiệp vụ
-            var isValid = ValidateData(entity, errorMsg);
+            var isValid = ValidateDataForPutMethod(entity, errorMsg, objectId);
             //Gửi lên dataLayer thêm mới vào database
             if (isValid == true)
             {
@@ -136,6 +136,9 @@ namespace MISA.Service
         {
             return true;
         }
-        
+        protected virtual bool ValidateDataForPutMethod(MISAEntity entity, ErrorMsg errorMsg = null, string objectId = null)
+        {
+            return true;
+        }
     }
 }

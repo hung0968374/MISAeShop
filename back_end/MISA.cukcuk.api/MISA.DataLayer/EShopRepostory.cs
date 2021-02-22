@@ -46,5 +46,31 @@ namespace MISA.DataLayer
                 return false;
             }
         }
+        public bool checkShopCodeExistedOrNot(string shopCode, string id)
+        {
+            var sqlSelectShopCode = $"SELECT eShopId From EShop AS E where E.eShopCode = '{shopCode}'";
+            Guid shopId = _dbConnection.Query<Guid>(sqlSelectShopCode).FirstOrDefault();
+            if (shopId.ToString() == id)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public bool checkShopPhoneExistedOrNot(string shopPhone, string id)
+        {
+            var sqlSelectShopPhone = $"SELECT eShopId From EShop AS E where E.eShopPhoneNumber = '{shopPhone}'";
+            Guid shopId = _dbConnection.Query<Guid>(sqlSelectShopPhone).FirstOrDefault();
+            if (shopId.ToString() == id)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
