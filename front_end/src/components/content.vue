@@ -1,7 +1,8 @@
 <template>
     <div class="content_part">
         <userChoice v-on:shopFormDiaSttOpened ="openShopForm"
-                    v-on:openDeleteDialog = "openDeleteDialog"/>
+                    v-on:openDeleteDialog = "openDeleteDialog"
+                    v-on:reloadData = "reloadData"/>
         <shopProp />
         <div class="inputField">
             <div class="shopCode_input">
@@ -87,6 +88,9 @@ export default {
             }
             this.$emit('sortByStt',this.shopSttContent);
         },
+        reloadData(){
+            this.$emit('reloadData');
+        },
         sortByName(){
             this.$emit("sortByName", this.shopName);
         },
@@ -133,6 +137,9 @@ export default {
         right: 0px;
         background-color: #efeeee;
         width: 1322px;
+   }
+   td {
+       cursor: pointer;
    }
    .shopTable {
        width: 100%;

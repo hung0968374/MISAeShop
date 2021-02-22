@@ -42,8 +42,9 @@
       </div>
       <div class="shopNationality">
         Quốc gia
-        <select class="input1" style="width: 205px; height: 35px" tabindex="1" v-model="eShop.eShopCode">
-          <option value="">Viet Nam</option>
+        <select class="input1" style="width: 205px; height: 35px" tabindex="1" v-model="eShop.eShopNationality">
+          <option value="0">Việt Nam</option>
+          <option value="1">Singapore</option>
         </select>
       </div>
       <div class="shopProvinceDistrict">
@@ -112,6 +113,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
   name: "dialogShopInfoForm",
   data() {
@@ -152,7 +154,21 @@ export default {
         eShopTaxCode: "",
         eShopVillage: "",
       },
+      eShopClone:{
+        eShopAddress: "",
+        eShopCode: "",
+        eShopDistrict: "",
+        eShopName: "",
+        eShopNationality: "",
+        eShopPhoneNumber: "",
+        eShopProvince: "",
+        eShopRoad: "",
+        eShopStatus: "",
+        eShopTaxCode: "",
+        eShopVillage: "",
+      },
       warningMesg : "",
+      qualifiedToPost: true,
     };
   },
   beforeMount: function () {
@@ -182,15 +198,62 @@ export default {
       this.warningMesg="";
       if (!this.eShop.eShopCode ){
         this.warningMesg += "Khong duoc de trong ma cua hang";
+        this.qualifiedToPost = false;
         alert(this.warningMesg);
       }
       else if (!this.eShop.eShopName){
         this.warningMesg += "Khong duoc de trong ten cua hang";
+        this.qualifiedToPost = false;
         alert(this.warningMesg);
       }
       else if (!this.eShop.eShopAddress){
         this.warningMesg += "Khong duoc de trong dia chi cua hang";
+        this.qualifiedToPost = false;
         alert(this.warningMesg);
+      }
+      else if (!this.eShop.eShopPhoneNumber){
+        this.warningMesg += "Khong duoc de trong so dien thoai";
+        this.qualifiedToPost = false;
+        alert(this.warningMesg);
+      }
+      if (this.eShop.eShopNationality == 0){
+        this.eShop.eShopNationality = "Việt Nam";
+      }
+      else{
+        this.eShop.eShopNationality = "Singapore";
+      }
+      this.eShop.eShopAddress = "";
+      this.eShop.eShopAddress+=",";
+      this.eShop.eShopProvince = this.Province;
+      this.eShop.eShopDistrict = this.District;
+      if (this.eShop.eShopRoad != ""){
+        this.eShop.eShopAddress+= this.eShop.eShopRoad +" ";
+      }
+      if (this.eShop.eShopVillage != ""){
+        this.eShop.eShopAddress+= this.eShop.eShopVillage +" ";
+      }
+      this.eShop.eShopAddress+= this.eShop.eShopDistrict +" " +this.eShop.eShopProvince ;
+      this.eShopClone.eShopAddress = this.eShop.eShopAddress;
+      this.eShopClone.eShopCode = this.eShop.eShopCode;
+      this.eShopClone.eShopDistrict = this.eShop.eShopDistrict;
+      this.eShopClone.eShopName = this.eShop.eShopName;
+      this.eShopClone.eShopNationality = this.eShop.eShopNationality;
+      this.eShopClone.eShopPhoneNumber = this.eShop.eShopPhoneNumber;
+      this.eShopClone.eShopProvince = this.eShop.eShopProvince;
+      this.eShopClone.eShopRoad = this.eShop.eShopRoad;
+      this.eShopClone.eShopStatus = "Đang hoạt động";
+      this.eShopClone.eShopTaxCode = this.eShop.eShopTaxCode;
+      this.eShopClone.eShopVillage = this.eShop.eShopStatus;
+      if (this.qualifiedToPost){
+        const response = await axios.post('http://localhost:57752/api/v1/EShops', this.eShopClone);
+        console.log(response.data.MISACode);
+        if (response.data.MISACode == 200 || response.data.MISACode == 201){
+          alert("Đã thêm thành công thông tin shop mới");
+          this.$emit("closeShopInfoDia");
+        }
+        else if (response.data.MISACode == 400){
+          alert("Thông tin của trường có dấu sao đã bị trùng hoặc trống, vui lòng thay đổi");
+        }
       }
     }
   },
@@ -220,6 +283,7 @@ export default {
 .x_icon {
   margin-left: 500px;
   color: brown;
+  cursor: pointer;
 }
 .shopPropInfo {
   padding: 15px;
@@ -324,6 +388,7 @@ select {
   background: darkblue;
   margin-left: 180px;
   color: white;
+  cursor: pointer;
 }
 .saveAndAdd {
   display: flex;
@@ -335,10 +400,12 @@ select {
   color: darkblue;
   border-radius: 3px;
   margin-right: 30px;
+  cursor: pointer;
 }
 .cancel {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .helping_icon {
   background: url("../assets/common-icon.png") no-repeat -179px -179px;

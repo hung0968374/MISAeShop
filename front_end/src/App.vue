@@ -11,6 +11,7 @@
                v-on:sortByShopCode = "sortByShopCode"
                v-on:sortByName = "sortShopByName"
                v-on:sortByPhone = "sortShopByPhone"
+               v-on:reloadData = "reloadData"
                 />
       <dialogShopInfoForm v-if="showShopPropDialog"
       v-on:closeShopInfoDia = "closeShopInfoDia"/>
@@ -87,6 +88,10 @@ export default {
       const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByPhoneNumber?filterString=' + url);
       console.log(res.data);
       this.data = res.data;
+    },
+    async reloadData(){
+      const response = await axios.get('http://localhost:57752/api/v1/EShops')
+      this.data = response.data;
     },
   },
   async created (){

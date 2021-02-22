@@ -17,9 +17,9 @@
         <div class="delete_icon"></div>
         <div class="delete_content" >Xóa</div>
       </div>
-      <div class="recharge">
+      <div class="recharge" @click="reloadData">
         <div class="recharge_icon"></div>
-        <div class="recharge_content">Nạp</div>
+        <div class="recharge_content" >Nạp</div>
       </div>
     </div>
   </div>
@@ -32,7 +32,10 @@ export default {
       this.$emit('shopFormDiaSttOpened');
     },
     openDeleteDialog: function(){
-      this.$emit('openDeleteDialog');
+      alert("Bạn hãy chọn shop muốn xóa rồi ấn chuột phải 1 cái nhé!");
+    },
+    reloadData: function(){
+      this.$emit('reloadData');
     }
   }
 };
@@ -62,6 +65,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .clone {
   display: flex;
@@ -71,6 +75,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .change {
@@ -81,6 +86,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .delete {
   display: flex;
@@ -90,6 +96,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .recharge {
   display: flex;
@@ -99,6 +106,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .adding_icon {
   background: url("../assets/common-icon.png") no-repeat -4px -130px;

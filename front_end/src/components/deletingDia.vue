@@ -123,4 +123,13 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .x_icon {
+        cursor: pointer;
+    }
+    .deleting {
+        cursor: pointer;
+    }
+    .cancel {
+        cursor: pointer;
+    }
 </style>
