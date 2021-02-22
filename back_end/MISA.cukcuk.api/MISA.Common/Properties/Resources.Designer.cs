@@ -113,5 +113,14 @@ namespace MISA.Common.Properties {
                 return ResourceManager.GetString("ErrorService_EmptyEShopCode", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Số điện thoại cửa hàng không được để trống.
+        /// </summary>
+        public static string ErrorService_EmptyEShopPhone {
+            get {
+                return ResourceManager.GetString("ErrorService_EmptyEShopPhone", resourceCulture);
+            }
+        }
     }
 }

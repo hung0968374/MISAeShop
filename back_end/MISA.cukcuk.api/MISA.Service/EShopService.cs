@@ -21,7 +21,12 @@ namespace MISA.Service
             // validate ma cua hang
             if (eShop.eShopCode == null || eShop.eShopCode == string.Empty)
             {
-                    errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopCode);
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopCode);
+                isValid = false;
+            }
+            if (eShop.eShopPhoneNumber == null || eShop.eShopPhoneNumber == string.Empty)
+            {
+                errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopPhone);
                 isValid = false;
             }
             var shopCodeExisted = dbContext.checkShopCodeExists(eShop.eShopCode);

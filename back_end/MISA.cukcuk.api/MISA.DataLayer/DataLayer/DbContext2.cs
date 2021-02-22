@@ -68,5 +68,9 @@ namespace MISA.DataLayer.InterMiLan
 
             return res;
         }
+        public int PutObject(object entity, string objectId)
+        {
+            return 1;
+        }
     }
 }

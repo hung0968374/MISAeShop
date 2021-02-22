@@ -93,6 +93,40 @@ namespace MISA.Service
             }
             return serviceResult;
         }
+
+        public virtual ServiceResult Put(MISAEntity entity, string objectId)
+        {
+            var serviceResult = new ServiceResult();
+            var errorMsg = new ErrorMsg();
+            //Xử lý nghiệp vụ
+            var isValid = ValidateData(entity, errorMsg);
+            //Gửi lên dataLayer thêm mới vào database
+            if (isValid == true)
+            {
+                var res = _dbContext.PutObject(entity, objectId);
+                if (res > 0)
+                {
+                    serviceResult.Success = true;
+                    serviceResult.MISACode = 200;
+                    serviceResult.Data = res;
+                    return serviceResult;
+                }
+                else
+                {
+                    serviceResult.Success = true;
+                    serviceResult.MISACode = 200;
+                    serviceResult.Data = res;
+                    return serviceResult;
+                }
+            }
+            else
+            {
+                serviceResult.Success = false;
+                errorMsg.MISACode = 400;
+                serviceResult.Data = errorMsg;
+            }
+            return serviceResult;
+        }
         /// <summary>
         /// Validate dữ liệu
         /// </summary>

@@ -109,7 +109,23 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, res);
             }
         }
-
+        [HttpPut("{eShopCode}")]
+        public IActionResult Put(MISAEntity entity, Guid eShopCode)
+        {
+            var res = _baseService.Put(entity, eShopCode.ToString());
+            if (res.Success == false)
+            {
+                return StatusCode(400, res.Data);
+            }
+            else if (res.Success == true && (int)res.Data > 0)
+            {
+                return StatusCode(201, res);
+            }
+            else
+            {
+                return StatusCode(200, res);
+            }
+        }
 
         //var res = _baseService.Delete(entity, code);
         //return Ok(res);

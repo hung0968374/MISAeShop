@@ -16,6 +16,7 @@ namespace MISA.Common.Model
         public string eShopDistrict { get; set; }
         public string eShopVillage { get; set; }
         public string eShopRoad { get; set; }
-        public string eShopExactAddress { get; set; }
+        public string eShopAddress { get; set; }
+        public string eShopStatus { get; set; }
     }
 }

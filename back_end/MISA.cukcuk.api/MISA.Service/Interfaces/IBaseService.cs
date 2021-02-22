@@ -9,6 +9,7 @@ namespace MISA.Service.Interfaces
     {
         ServiceResult GetData();
         ServiceResult Insert(MISAEntity entity);
+        ServiceResult Put(MISAEntity entity, string objectId);
         ServiceResult Delete(MISAEntity entity, string Code);
         ServiceResult GetByFilteringShopCode(string filterString);
         ServiceResult GetByFilteringShopName(string filterString);

@@ -135,4 +135,7 @@
   <data name="ErrorService_EmptyEShopCode" xml:space="preserve">
     <value>Mã cửa hàng không được để trống</value>
   </data>
+  <data name="ErrorService_EmptyEShopPhone" xml:space="preserve">
+    <value>Số điện thoại cửa hàng không được để trống</value>
+  </data>
 </root>

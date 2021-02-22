@@ -1,11 +1,8 @@
 ﻿using Dapper;
-using MISA.Common.Model;
 using MISA.DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace MISA.DataLayer
 {
@@ -129,6 +126,38 @@ namespace MISA.DataLayer
             sqlPropParam = sqlPropParam.Remove(0, 1);
             sqlCommand = $"Insert into {className} ({sqlPropName}) values ({sqlPropParam})";
             var res = _dbConnection.Execute(sqlCommand, param: entity, commandType: CommandType.Text);
+            return res;
+        }
+        /// <summary>
+        /// Hàm sửa thông tin 
+        /// </summary>
+        /// <param name="entity">đối tượng cần sửa, ví dụ eShop, employee</param>
+        /// <returns></returns>
+        public int PutObject(object entity, string objectId)
+        {
+            var sqlPropName = string.Empty;
+            var sqlPropValue = string.Empty;
+            var sqlPropParam = string.Empty;
+            var className = typeof(MISAEntity).Name;
+            var sqlCommand = string.Empty;
+            var sqlString = string.Empty;
+            // Lấy các property của object
+            var properties = typeof(MISAEntity).GetProperties();
+            // Duyệt property, lấy tên và giá trị của property
+            //(tên là tên param trong câu truy vấn sql)
+            // (value: giá trị là giá trị param tương ứng trong câu lênh SQL)
+            foreach (var property in properties)
+            {
+                if (property.PropertyType != typeof(Guid) )
+                {
+                    var propName = property.Name;
+                    var propValue = property.GetValue(entity);
+                    sqlString += propName + '=' + "'" + propValue + "'" + ',';
+                }
+            }
+            sqlString = sqlString.Remove(sqlString.Length - 1);
+            sqlCommand = $"update {className} set {sqlString} where {className}Id = '{objectId}'";
+            var res = _dbConnection.Execute(sqlCommand);
             return res;
         }
         public int Delete(object entity, string code)
