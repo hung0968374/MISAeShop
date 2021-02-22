@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog">
+  <div class="dialog" >
     <div class="title">
       <strong>Thêm mới cửa hàng</strong>
       <span class="x_icon" @click="closeShopInfoDia">X</span>
@@ -181,7 +181,7 @@ export default {
     city: function () {
     },
   },
-  props: {},
+  props: ["eShopCodeForChangingData", "openChangeShop"],
   methods: {
     closeShopInfoDia: function () {
       this.$emit("closeShopInfoDia");
@@ -255,6 +255,12 @@ export default {
           alert("Thông tin của trường có dấu sao đã bị trùng hoặc trống, vui lòng thay đổi");
         }
       }
+    }
+  },
+  async mounted() {
+    if (this.openChangeShop){
+      const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByCode?sortByShopCode=' + this.eShopCodeForChangingData);
+      this.eShop = response.data[0];
     }
   },
 };

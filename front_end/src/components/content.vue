@@ -2,7 +2,8 @@
     <div class="content_part">
         <userChoice v-on:shopFormDiaSttOpened ="openShopForm"
                     v-on:openDeleteDialog = "openDeleteDialog"
-                    v-on:reloadData = "reloadData"/>
+                    v-on:reloadData = "reloadData"
+                    v-on:addNewShopBtn = "addNewShopBtn"/>
         <shopProp />
         <div class="inputField">
             <div class="shopCode_input">
@@ -39,7 +40,8 @@
                     <tr :key = "listData.eShopId" v-for="listData in listDatas" class="hoverShopInfo"
                     @mouseup.right="$emit('deleteThisShop',
                      {eShopCode : listData.eShopCode,
-                     eShopName:listData.eShopName} )">
+                     eShopName:listData.eShopName})"
+                     @dblclick="$emit('changeShopInfo', listData.eShopCode)">
                         <td class="shopCode_column">{{listData.eShopCode}}</td>
                         <td class="shopName_column">{{listData.eShopName}}</td>
                         <td class="shopAddress_column">{{listData.eShopAddress}}</td>
@@ -75,9 +77,7 @@ export default {
         openDeleteDialog: function(){
             this.$emit('openDeleteDialog');
         },
-        del(){
-            alert('a');
-        },
+       
         sttOnChange(){
             console.log(this.shopStt);
             if (this.shopStt == 0){
@@ -87,6 +87,9 @@ export default {
                 this.shopSttContent = "Đã đóng cửa";
             }
             this.$emit('sortByStt',this.shopSttContent);
+        },
+        addNewShopBtn(){
+            this.$emit('addNewShopBtn');
         },
         reloadData(){
             this.$emit('reloadData');

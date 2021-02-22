@@ -3,7 +3,7 @@
     <div class="user_choice">
       <div class="adding_new" v-on:click = "changingDiaShopFormStt">
         <div class="adding_icon"></div>
-        <div class="adding_content" >Thêm mới</div>
+        <div class="adding_content" @click="addNewShopBtn" >Thêm mới</div>
       </div>
       <div class="clone">
         <div class="clone_icon"></div>

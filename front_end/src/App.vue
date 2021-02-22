@@ -12,9 +12,14 @@
                v-on:sortByName = "sortShopByName"
                v-on:sortByPhone = "sortShopByPhone"
                v-on:reloadData = "reloadData"
+               v-on:changeShopInfo = "changeShopInfo"
+               v-on:addNewShopBtn = "addNewShopBtn"
                 />
       <dialogShopInfoForm v-if="showShopPropDialog"
-      v-on:closeShopInfoDia = "closeShopInfoDia"/>
+      v-on:closeShopInfoDia = "closeShopInfoDia"
+      :eShopCodeForChangingData = "this.eShopShopCodeForChangingData"
+      :openChangeShop = "this.openChangeShop"
+      />
       <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" 
       :deleteEShopName = "deleteEShopName"
       :deleteEShopCode = "deleteEshopCode" />
@@ -44,14 +49,27 @@ export default {
       data:[],
       deleteEShopName:"",
       deleteEshopCode:"",
+      eShopShopCodeForChangingData: "",
+      openChangeShop:"false"
     }
   },
   methods: {
+      changeShopInfo(shopCode){
+        this.openChangeShop = true;
+        this.showShopPropDialog = !this.showShopPropDialog;
+        // const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByCode?sortByShopCode=' + shopCode);
+        // this.eShopAllInfo = response.data;
+        this.eShopShopCodeForChangingData = shopCode;
+        console.log(this.eShopShopCodeForChangingData);
+    },
     async deleteShop(payLoad){
       console.log(payLoad.eShopCode+" " + payLoad.eShopName);
       this.deleteEShopName = payLoad.eShopName;
       this.deleteEshopCode = payLoad.eShopCode;
       this.showDeletingDialog = true;
+    },
+    addNewShopBtn(){
+      this.openShopInfoForm = false;
     },
     openShopInfoForm: function(){
       this.showShopPropDialog = !this.showShopPropDialog;
@@ -61,6 +79,7 @@ export default {
     },
     closeShopInfoDia:function(){
        this.showShopPropDialog = !this.showShopPropDialog;
+       this.openChangeShop = false;
     },
     closeDelDia:function(){
       this.showDeletingDialog = !this.showDeletingDialog;
