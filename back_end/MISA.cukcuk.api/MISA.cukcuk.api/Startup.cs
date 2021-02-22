@@ -62,7 +62,7 @@ namespace MISA.cukcuk.api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.cukcuk.api v1"));
             }
-            app.UseCors(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            
             ///xử lý exception chung
             app.UseExceptionHandler(a => a.Run(async context =>
             {
@@ -76,7 +76,7 @@ namespace MISA.cukcuk.api
                 //await context.Response.WriteAsJsonAsync(new { error = exception.Message });
                 await context.Response.WriteAsJsonAsync(errorMsg);
             }));
-
+            app.UseCors(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseRouting();
 
             app.UseAuthorization();

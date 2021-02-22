@@ -114,3 +114,7 @@ G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\obj\Debug\net5.0\M
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\obj\Debug\net5.0\ref\MISA.cukcuk.api.dll
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\obj\Debug\net5.0\MISA.cukcuk.api.pdb
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\obj\Debug\net5.0\MISA.cukcuk.api.genruntimeconfig.cache
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\bin\Debug\net5.0\Newtonsoft.Json.dll
+G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.cukcuk.api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

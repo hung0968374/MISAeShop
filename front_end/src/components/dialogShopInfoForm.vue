@@ -5,38 +5,44 @@
       <span class="x_icon" @click="closeShopInfoDia">X</span>
     </div>
     <div class="shopPropInfo">
-      <div class="shopCode">
+      <div class="shopCode" >
         Mã cửa hàng
         <span class="redStarIcon" style="margin-left: 5px">*</span>
-        <input type="text" class="input1" style="width: 500px; height: 35px" />
+        <input type="text" class="input1" style="width: 500px; height: 35px" autofocus tabindex="1"
+        v-model="eShop.eShopCode"/>
       </div>
       <div class="shopName">
         Tên cửa hàng
         <span class="redStarIcon" style="margin-left: 5px">*</span>
-        <input type="text" class="input1" style="width: 500px; height: 35px" />
+        <input type="text" class="input1" style="width: 500px; height: 35px" tabindex="1"
+        v-model="eShop.eShopName"/>
       </div>
       <div class="shopAddress">
         Địa chỉ
         <span class="redStarIcon" style="margin-left: 5px">*</span>
-        <input type="text" class="input1" style="width: 500px; height: 70px" />
+        <input type="text" class="input1" style="width: 500px; height: 70px" tabindex="1"
+        v-model="eShop.eShopAddress"/>
       </div>
       <div class="shopPhone_TaxCode">
         <div class="shopPhone">
           Số điện thoại
           <input
             type="text"
-            class="input1"
-            style="width: 200px; height: 35px"
+            class="input1" tabindex="1"
+            style="width: 200px; height: 35px "
+            v-model="eShop.eShopPhoneNumber"
           />
         </div>
         <div class="shopTaxCode">
           Mã số thuế
-          <input type="text" style="width: 200px; height: 35px" />
+          <input type="text" style="width: 200px; height: 35px" tabindex="1"
+          v-model="eShop.eShopTaxCode"
+          />
         </div>
       </div>
       <div class="shopNationality">
         Quốc gia
-        <select class="input1" style="width: 205px; height: 35px">
+        <select class="input1" style="width: 205px; height: 35px" tabindex="1" v-model="eShop.eShopCode">
           <option value="">Viet Nam</option>
         </select>
       </div>
@@ -45,7 +51,7 @@
           Tỉnh/Thành phố
           <select
             v-model="Province"
-            class="input1"
+            class="input1" tabindex="1"
             style="width: 205px; height: 35px"
           >
             <option
@@ -59,7 +65,7 @@
         </div>
         <div class="shopDistrict">
           Quận/huyện
-          <select v-model="District" style="width: 205px; height: 35px">
+          <select v-model="District" style="width: 205px; height: 35px" tabindex="1">
             <option
               v-for="(option, index) in DistrictArr"
               :value="option.name"
@@ -69,66 +75,38 @@
             </option>
           </select>
         </div>
-        <!-- <select class="input1"  style="width: 205px; height: 35px">
-            <option value="">Ha Noi</option>
-            <option value="">Ha Noi</option>
-            <option value="">Ha Noi</option>
-            <option value="">Ha Noi</option>
-          </select>
-        </div>
-        <div class="shopDistrict">
-          Quận/huyện
-          <select style="width: 205px; height: 35px">
-            <option value="">Bac tu liem</option>
-            <option value="">Ha Noi</option>
-            <option value="">Ha Noi</option>
-            <option value="">Ha Noi</option>
-          </select> -->
       </div>
       <div class="shopVillageRoad">
         <div class="shopVillage">
           Phường/xã
-          <select class="input1" style="width: 205px; height: 35px">
+          <select class="input1" style="width: 205px; height: 35px" tabindex="1"
+          v-model="eShop.eShopVillage">
             <option value="">Liêm Mạc</option>
           </select>
         </div>
-        <div class="shopRoad">
+        <div class="shopRoad" >
           Đường phố
-          <input type="text" style="width: 200px; height: 35px" />
+          <input type="text" style="width: 200px; height: 35px" tabindex="1"
+          v-model="eShop.eShopRoad" />
         </div>
       </div>
-
-      <!-- phan loai quan huyen theo ten thanh pho -->
-
-      <!-- <select v-model="Province">
-        <option v-for="(option,index) in arr" :value="option.name" :key="index">
-          {{ option.name }}
-        </option>
-      </select>
-      <select v-model="city">
-        <option v-for="(option,index) in cityArr" :value="option.name" :key="index">
-          {{ option.name }}
-        </option>
-      </select> -->
-
-      <!-- phan loai quan huyen theo ten thanh pho -->
     </div>
     <div class="footer">
       <div class="helping">
-        <div class="helping_icon"></div>
-        Tro giup
+        <div class="helping_icon" tabindex="1"></div>
+        Trợ giúp
       </div>
       <div class="saving">
-        <div class="saving_icon"></div>
-        luu
+        <div class="saving_icon" tabindex="1"></div>
+        Lưu
       </div>
-      <div class="saveAndAdd">
-        <div class="saveAndAdd_icon"></div>
-        luu va them moi
+      <div class="saveAndAdd" @click="addingNewEshop">
+        <div class="saveAndAdd_icon" tabindex="1" ></div>
+        Lưu và Thêm mới
       </div>
-      <div class="cancel" @click="closeShopInfoDia">
+      <div class="cancel" @click="closeShopInfoDia" tabindex="1">
         <div class="cancel_icon"></div>
-        Huy bo
+        Hủy bỏ
       </div>
     </div>
   </div>
@@ -160,6 +138,21 @@ export default {
       Province: "Hà Nội",
       District: "Bắc Từ Liêm",
       DistrictArr: [],
+      eShop: {
+        eShopAddress: "",
+        eShopCode: "",
+        eShopDistrict: "",
+        eShopId: "",
+        eShopName: "",
+        eShopNationality: "",
+        eShopPhoneNumber: "",
+        eShopProvince: "",
+        eShopRoad: "",
+        eShopStatus: "",
+        eShopTaxCode: "",
+        eShopVillage: "",
+      },
+      warningMesg : "",
     };
   },
   beforeMount: function () {
@@ -185,6 +178,21 @@ export default {
         }
       }
     },
+    async addingNewEshop(){
+      this.warningMesg="";
+      if (!this.eShop.eShopCode ){
+        this.warningMesg += "Khong duoc de trong ma cua hang";
+        alert(this.warningMesg);
+      }
+      else if (!this.eShop.eShopName){
+        this.warningMesg += "Khong duoc de trong ten cua hang";
+        alert(this.warningMesg);
+      }
+      else if (!this.eShop.eShopAddress){
+        this.warningMesg += "Khong duoc de trong dia chi cua hang";
+        alert(this.warningMesg);
+      }
+    }
   },
 };
 </script>

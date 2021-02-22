@@ -2,8 +2,11 @@
   <div id="app1" v-bind:class="{handleDialog: showShopPropDialog, handleDelDia: showDeletingDialog }">
       <Menu />
       <Header />
-      <Content v-on:openShopForm = "openShopInfoForm" 
-               v-on:openDeleteDialog = "openDeleteDialog"/>
+      <Content :listDatas = "this.data"
+                v-on:openShopForm = "openShopInfoForm" 
+                v-on:deleteThisShop = "deleteShop"
+               v-on:openDeleteDialog = "openDeleteDialog"
+                />
       <dialogShopInfoForm v-if="showShopPropDialog"
       v-on:closeShopInfoDia = "closeShopInfoDia"/>
       <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" />
@@ -16,6 +19,7 @@ import Header from './components/header';
 import Content from './components/content';
 import dialogShopInfoForm from './components/dialogShopInfoForm';
 import deletingDia from './components/deletingDia';
+import axios from 'axios';
 export default {
   name: 'App',
   components: {
@@ -29,6 +33,7 @@ export default {
     return {
       showShopPropDialog: false,
       showDeletingDialog: false,
+      data:[]
     }
   },
   methods: {
@@ -43,10 +48,16 @@ export default {
     },
     closeDelDia:function(){
       this.showDeletingDialog = !this.showDeletingDialog;
+    },
+    async deleteShop(payLoad){
+      console.log(payLoad.eShopId+payLoad.eShopName);
+      const response = await axios.delete('http://localhost:57752/api/v1/EShops/' + payLoad.eShopId)
+      console.log(response);
     }
   },
   async created (){
-   
+      const response = await axios.get('http://localhost:57752/api/v1/EShops')
+      this.data = response.data;
   }
 }
 </script>

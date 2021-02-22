@@ -27,20 +27,25 @@
                 </select>
             </div>
         </div>
-        <table class="shopTable">
-            <thead>
-                <tr>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <td class="shopCode_column">2131321</td>
-                <td class="shopName_column">3123123</td>
-                <td class="shopAddress_column">123213</td>
-                <td class="shopPhoneNum_column">123213</td>
-                <td class="shopStt_column">123</td>
-            </tbody>
-        </table>
+        <div class="shoptbl">
+            <table class="shopTable">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :key = "listData.eShopId" v-for="listData in listDatas" class="hoverShopInfo"
+                    @dblclick="$emit('deleteThisShop', {eShopId: listData.eShopId, eShopName: listData.eShopName})">
+                        <td class="shopCode_column">{{listData.eShopCode}}</td>
+                        <td class="shopName_column">{{listData.eShopName}}</td>
+                        <td class="shopAddress_column">{{listData.eShopAddress}}</td>
+                        <td class="shopPhoneNum_column">{{listData.eShopPhoneNumber}}</td>
+                        <td class="shopStt_column">{{listData.eShopStatus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <pageFooter />
     </div>
 </template>
@@ -55,6 +60,7 @@ export default {
       shopProp,
       pageFooter
     },
+    props: ["listDatas"],
     computed:{
        
     },
@@ -79,6 +85,9 @@ export default {
 </script>
 
 <style scoped>
+    .hoverShopInfo:hover {
+        background: blueviolet;
+    }
    .content_part {
         position: absolute;
         top: 60px;
@@ -89,11 +98,16 @@ export default {
         width: 1322px;
    }
    .shopTable {
-       width: 98.5%;
+       width: 100%;
        margin-left: 10px;
        margin-right: 10px;
        border: 1px solid red;
        border-collapse: collapse;
+       font-size: 16px;
+   }
+   .shoptbl {
+       height: 500px;
+       OverFlow-y: scroll;
    }
    .shopTable td {
        border: 1px solid green;
@@ -144,17 +158,18 @@ export default {
         width: 181px;
     }
     .shopCode_column {
-        width: 158px;
+        width: 150px;
     }
     .shopName_column {
-        width: 249px;
+        width: 238px;
     }
     .shopAddress_column {
-        width: 535px;
+        width: 520px;
     }
     .shopPhoneNum_column {
-        width: 181px;
+        width: 170px;
     }
-    .shopStt_column {
+    td {
+        padding: 5px;
     }
 </style>
