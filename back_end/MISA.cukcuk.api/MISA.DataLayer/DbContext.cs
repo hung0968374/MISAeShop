@@ -35,6 +35,14 @@ namespace MISA.DataLayer
 
             return entities;
         }
+        public IEnumerable<MISAEntity> GetByFilteringShopCode(string code)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}Code like concat ('%','{code.ToString()}','%')", commandType: CommandType.Text);
+
+            return entities;
+        }
         #region method
         public IEnumerable<MISAEntity> GetAll(string sqlCommand, CommandType commandType = CommandType.Text)
         {

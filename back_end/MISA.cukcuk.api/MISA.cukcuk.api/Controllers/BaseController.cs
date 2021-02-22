@@ -36,6 +36,25 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        [HttpGet("filter")]
+        public IActionResult GetByFilteringShopCode([FromQuery] string sortByShopCode)
+        {
+            var serviceResult = _baseService.GetByFilteringShopCode(sortByShopCode);
+            var entities = serviceResult.Data as List<MISAEntity>;
+            if (entities.Count == 0)
+            {
+                return StatusCode(204, serviceResult.Data);
+            }
+            else
+            {
+                return StatusCode(200, serviceResult.Data);
+            }
+        }
+        //[HttpGet("filter")]
+        //public IActionResult GetByShopName([FromQuery] string sortByShopName)
+        //{
+        //    return Ok();
+        //}
         [HttpPost]
         public IActionResult Post(MISAEntity entity)
         {

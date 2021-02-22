@@ -37,5 +37,12 @@ namespace MISA.DataLayer.InterMiLan
         public int Delete(object entity, string code) {
             return 1;
         }
+        public IEnumerable<MISAEntity> GetByFilteringShopCode(string code) {
+            var className = typeof(MISAEntity).Name;
+
+            var res = _dbConnection.Query<MISAEntity>($"select * from {className}", commandType: CommandType.Text);
+
+            return res;
+        }
     }
 }

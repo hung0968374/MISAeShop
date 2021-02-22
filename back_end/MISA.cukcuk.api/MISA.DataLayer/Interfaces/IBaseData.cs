@@ -9,5 +9,6 @@ namespace MISA.DataLayer.Interfaces
         public IEnumerable<MISAEntity> GetAll();
         public int InsertObject(object entity);
         public int Delete(object entity, string code);
+        public IEnumerable<MISAEntity> GetByFilteringShopCode(string code);
     }
 }
