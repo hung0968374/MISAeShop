@@ -78,7 +78,7 @@ namespace MISA.cukcuk.api
             }));
             app.UseCors(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseRouting();
-
+                 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

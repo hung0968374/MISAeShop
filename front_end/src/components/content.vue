@@ -21,9 +21,9 @@
                 <input type="text" class="phone_input">
             </div>
              <div class="shopStatus_input">
-                <select class="stt_selection">
-                    <option value="">Dang hoat dong</option>
-                    <option value="">Da dong cua</option>
+                <select class="stt_selection" @change="sttOnChange" v-model="shopStt">
+                    <option value="0">Đang hoạt động</option>
+                    <option value="1">Đã đóng cửa</option>
                 </select>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     <tr :key = "listData.eShopId" v-for="listData in listDatas" class="hoverShopInfo"
-                    @dblclick="$emit('deleteThisShop', {eShopId: listData.eShopId, eShopName: listData.eShopName})">
+                    @dblclick="$emit('deleteThisShop', listData.eShopId)" @mouseup.right="del">
                         <td class="shopCode_column">{{listData.eShopCode}}</td>
                         <td class="shopName_column">{{listData.eShopName}}</td>
                         <td class="shopAddress_column">{{listData.eShopAddress}}</td>
@@ -71,10 +71,24 @@ export default {
         openDeleteDialog: function(){
             this.$emit('openDeleteDialog');
         },
+        del(){
+            alert('a');
+        },
+        sttOnChange(){
+            console.log(this.shopStt);
+            if (this.shopStt == 0){
+                this.shopSttContent = "Đang hoạt động";
+            }
+            else{
+                this.shopSttContent = "Đã đóng cửa";
+            }
+            this.$emit('sortByStt',this.shopSttContent);
+        }
     },
     data() {
         return {
-            
+            shopStt: 0,
+            shopSttContent: "",
         }
     },
     filters: {

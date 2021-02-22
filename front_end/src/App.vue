@@ -6,6 +6,7 @@
                 v-on:openShopForm = "openShopInfoForm" 
                 v-on:deleteThisShop = "deleteShop"
                v-on:openDeleteDialog = "openDeleteDialog"
+               v-on:sortByStt = "sortByShopStt"
                 />
       <dialogShopInfoForm v-if="showShopPropDialog"
       v-on:closeShopInfoDia = "closeShopInfoDia"/>
@@ -37,6 +38,12 @@ export default {
     }
   },
   methods: {
+    async deleteShop(payLoad){
+      console.log(payLoad);
+      //const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByPhoneNumber?filterString=' + '095')
+      const response = await axios.delete('http://localhost:57752/api/v1/EShops/' + payLoad)
+      console.log(response);
+    },
     openShopInfoForm: function(){
       this.showShopPropDialog = !this.showShopPropDialog;
     },
@@ -49,10 +56,11 @@ export default {
     closeDelDia:function(){
       this.showDeletingDialog = !this.showDeletingDialog;
     },
-    async deleteShop(payLoad){
-      console.log(payLoad.eShopId+payLoad.eShopName);
-      const response = await axios.delete('http://localhost:57752/api/v1/EShops/' + payLoad.eShopId)
-      console.log(response);
+    async sortByShopStt(url){
+      console.log(url);
+      const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByShopStatus?filterString=' + url);
+      console.log(res.data);
+      this.data = res.data;
     }
   },
   async created (){

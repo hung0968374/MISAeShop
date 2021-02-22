@@ -14,6 +14,7 @@ namespace MISA.Service.Interfaces
         ServiceResult GetByFilteringShopCode(string filterString);
         ServiceResult GetByFilteringShopName(string filterString);
         ServiceResult GetByFilteringShopAddress(string filterString);
-        ServiceResult GetByFilteringShopPhoneNumber(string filterString); 
+        ServiceResult GetByFilteringShopPhoneNumber(string filterString);
+        ServiceResult GetByFilteringShopStt(string filterString);
     }
 }

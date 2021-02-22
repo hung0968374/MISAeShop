@@ -72,5 +72,13 @@ namespace MISA.DataLayer.InterMiLan
         {
             return 1;
         }
+        public IEnumerable<MISAEntity> GetByFilteringShopStt(string code)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var res = _dbConnection.Query<MISAEntity>($"select * from {className}", commandType: CommandType.Text);
+
+            return res;
+        }
     }
 }

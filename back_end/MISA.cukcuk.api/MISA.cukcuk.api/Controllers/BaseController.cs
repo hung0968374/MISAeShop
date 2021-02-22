@@ -78,6 +78,20 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        [HttpGet("filterByShopStatus")]
+        public IActionResult GetByShopStatus([FromQuery] string filterString)
+        {
+            var serviceResult = _baseService.GetByFilteringShopStt(filterString);
+            var entities = serviceResult.Data as List<MISAEntity>;
+            if (entities.Count == 0)
+            {
+                return StatusCode(204, serviceResult.Data);
+            }
+            else
+            {
+                return StatusCode(200, serviceResult.Data);
+            }
+        }
         [HttpGet("filterByPhoneNumber")]
         public IActionResult GetByShopPhoneNumber([FromQuery] string filterString)
         {

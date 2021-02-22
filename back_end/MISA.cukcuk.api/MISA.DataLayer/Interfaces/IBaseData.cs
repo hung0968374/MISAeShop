@@ -14,5 +14,6 @@ namespace MISA.DataLayer.Interfaces
         public IEnumerable<MISAEntity> GetByFilteringShopName(string code);
         public IEnumerable<MISAEntity> GetByFilteringShopAddress(string code);
         public IEnumerable<MISAEntity> GetByFilteringShopPhoneNumber(string code);
+        public IEnumerable<MISAEntity> GetByFilteringShopStt(string code);
     }
 }
