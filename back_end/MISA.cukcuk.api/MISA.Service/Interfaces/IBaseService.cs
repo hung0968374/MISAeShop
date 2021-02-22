@@ -11,5 +11,8 @@ namespace MISA.Service.Interfaces
         ServiceResult Insert(MISAEntity entity);
         ServiceResult Delete(MISAEntity entity, string Code);
         ServiceResult GetByFilteringShopCode(string filterString);
+        ServiceResult GetByFilteringShopName(string filterString);
+        ServiceResult GetByFilteringShopAddress(string filterString);
+        ServiceResult GetByFilteringShopPhoneNumber(string filterString); 
     }
 }

@@ -31,6 +31,24 @@ namespace MISA.Service
             serviceResult.Data = _dbContext.GetByFilteringShopCode(filterString);
             return serviceResult;
         }
+        public virtual ServiceResult GetByFilteringShopName(string filterString)
+        {
+            var serviceResult = new ServiceResult();
+            serviceResult.Data = _dbContext.GetByFilteringShopName(filterString);
+            return serviceResult;
+        }
+        public virtual ServiceResult GetByFilteringShopAddress(string filterString)
+        {
+            var serviceResult = new ServiceResult();
+            serviceResult.Data = _dbContext.GetByFilteringShopAddress(filterString);
+            return serviceResult;
+        }
+        public virtual ServiceResult GetByFilteringShopPhoneNumber(string filterString)
+        {
+            var serviceResult = new ServiceResult();
+            serviceResult.Data = _dbContext.GetByFilteringShopPhoneNumber(filterString);
+            return serviceResult;
+        }
         public virtual ServiceResult Delete(MISAEntity entity, string code)
         {
             var serviceResult = new ServiceResult();

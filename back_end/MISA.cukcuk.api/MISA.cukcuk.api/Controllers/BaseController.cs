@@ -36,7 +36,7 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
-        [HttpGet("filter")]
+        [HttpGet("filterByCode")]
         public IActionResult GetByFilteringShopCode([FromQuery] string sortByShopCode)
         {
             var serviceResult = _baseService.GetByFilteringShopCode(sortByShopCode);
@@ -50,11 +50,48 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
-        //[HttpGet("filter")]
-        //public IActionResult GetByShopName([FromQuery] string sortByShopName)
-        //{
-        //    return Ok();
-        //}
+        [HttpGet("filterByName")]
+        public IActionResult GetByShopName([FromQuery] string sortByShopName)
+        {
+            var serviceResult = _baseService.GetByFilteringShopName(sortByShopName);
+            var entities = serviceResult.Data as List<MISAEntity>;
+            if (entities.Count == 0)
+            {
+                return StatusCode(204, serviceResult.Data);
+            }
+            else
+            {
+                return StatusCode(200, serviceResult.Data);
+            }
+        }
+        [HttpGet("filterByAddress")]
+        public IActionResult GetByShopAddress([FromQuery] string filterString)
+        {
+            var serviceResult = _baseService.GetByFilteringShopAddress(filterString);
+            var entities = serviceResult.Data as List<MISAEntity>;
+            if (entities.Count == 0)
+            {
+                return StatusCode(204, serviceResult.Data);
+            }
+            else
+            {
+                return StatusCode(200, serviceResult.Data);
+            }
+        }
+        [HttpGet("filterByPhoneNumber")]
+        public IActionResult GetByShopPhoneNumber([FromQuery] string filterString)
+        {
+            var serviceResult = _baseService.GetByFilteringShopPhoneNumber(filterString);
+            var entities = serviceResult.Data as List<MISAEntity>;
+            if (entities.Count == 0)
+            {
+                return StatusCode(204, serviceResult.Data);
+            }
+            else
+            {
+                return StatusCode(200, serviceResult.Data);
+            }
+        }
         [HttpPost]
         public IActionResult Post(MISAEntity entity)
         {

@@ -35,11 +35,35 @@ namespace MISA.DataLayer
 
             return entities;
         }
-        public IEnumerable<MISAEntity> GetByFilteringShopCode(string code)
+        public IEnumerable<MISAEntity> GetByFilteringShopCode(string filterString)
         {
             var className = typeof(MISAEntity).Name;
 
-            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}Code like concat ('%','{code.ToString()}','%')", commandType: CommandType.Text);
+            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}Code like concat ('%','{filterString.ToString()}','%')", commandType: CommandType.Text);
+
+            return entities;
+        }
+        public IEnumerable<MISAEntity> GetByFilteringShopName(string filterString)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}Name like concat ('%','{filterString.ToString()}','%')", commandType: CommandType.Text);
+
+            return entities;
+        }
+        public IEnumerable<MISAEntity> GetByFilteringShopAddress(string filterString)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}Address like concat ('%','{filterString.ToString()}','%')", commandType: CommandType.Text);
+
+            return entities;
+        }
+        public IEnumerable<MISAEntity> GetByFilteringShopPhoneNumber(string filterString)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var entities = _dbConnection.Query<MISAEntity>($"select * from {className} where {className}PhoneNumber like concat ('%','{filterString.ToString()}','%')", commandType: CommandType.Text);
 
             return entities;
         }

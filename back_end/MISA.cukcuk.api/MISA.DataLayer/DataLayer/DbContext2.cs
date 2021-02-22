@@ -44,5 +44,29 @@ namespace MISA.DataLayer.InterMiLan
 
             return res;
         }
+        public IEnumerable<MISAEntity> GetByFilteringShopName(string code)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var res = _dbConnection.Query<MISAEntity>($"select * from {className}", commandType: CommandType.Text);
+
+            return res;
+        }
+        public IEnumerable<MISAEntity> GetByFilteringShopAddress(string code)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var res = _dbConnection.Query<MISAEntity>($"select * from {className}", commandType: CommandType.Text);
+
+            return res;
+        }
+        public IEnumerable<MISAEntity> GetByFilteringShopPhoneNumber(string code)
+        {
+            var className = typeof(MISAEntity).Name;
+
+            var res = _dbConnection.Query<MISAEntity>($"select * from {className}", commandType: CommandType.Text);
+
+            return res;
+        }
     }
 }
