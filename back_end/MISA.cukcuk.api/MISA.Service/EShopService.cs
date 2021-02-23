@@ -18,24 +18,26 @@ namespace MISA.Service
         {
             var dbContext = new EShopRepostory();
             var isValid = true;
-            // validate ma cua hang
+            // validate không cho mã trống
             if (eShop.eShopCode == null || eShop.eShopCode == string.Empty)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopCode);
                 isValid = false;
             }
+            // validate không cho sdt trống
             if (eShop.eShopPhoneNumber == null || eShop.eShopPhoneNumber == string.Empty)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopPhone);
                 isValid = false;
             }
+            // validate xem mã đã tồn tại chưa
             var shopCodeExisted = dbContext.checkShopCodeExists(eShop.eShopCode);
             if (shopCodeExisted == true)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_DuplicateEShopCode);
                 isValid = false;
             }
-            //validate sdt
+            //validate sdt đã tồn tại chưa
             var phoneExisted = dbContext.checkShopPhoneNumberExists(eShop.eShopPhoneNumber);
             if (phoneExisted == true)
             {
@@ -48,25 +50,26 @@ namespace MISA.Service
         {
             var dbContext = new EShopRepostory();
             var isValid = true;
-            // validate ma cua hang
+            // validate mã cửa hàng 
             if (eShop.eShopCode == null || eShop.eShopCode == string.Empty)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopCode);
                 isValid = false;
             }
+            // validate sdt không được trống
             if (eShop.eShopPhoneNumber == null || eShop.eShopPhoneNumber == string.Empty)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_EmptyEShopPhone);
                 isValid = false;
             }
-            /// validate trung ma code cua hang
+            /// validate trùng mã cửa hàng
             var shopCodeExisted = dbContext.checkShopCodeExistedOrNot(eShop.eShopCode, objectId);
             if (shopCodeExisted == true)
             {
                 errorMsg.UserMsg.Add(MISA.Common.Properties.Resources.ErrorService_DuplicateEShopCode);
                 isValid = false;
             }
-            //validate trung sdt
+            //validate trùng sdt
             var phoneExisted = dbContext.checkShopPhoneExistedOrNot(eShop.eShopPhoneNumber, objectId);
             if (phoneExisted == true)
             {

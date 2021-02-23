@@ -46,11 +46,18 @@ namespace MISA.DataLayer
                 return false;
             }
         }
+        /// <summary>
+        /// check xem shopCOde đã tồn tại chưa
+        /// </summary>
+        /// <param name="shopCode">mã cần kiểm tra</param>
+        /// <param name="id">id này để so sánh id tìm được theo shopcode với chính nó, nếu 2 id bằng nhau thì không trùng, ngược lại sẽ trả 
+        /// lại kết quả trùng mã</param>
+        /// <returns></returns>
         public bool checkShopCodeExistedOrNot(string shopCode, string id)
         {
             var sqlSelectShopCode = $"SELECT eShopId From EShop AS E where E.eShopCode = '{shopCode}'";
             Guid shopId = _dbConnection.Query<Guid>(sqlSelectShopCode).FirstOrDefault();
-            if (shopId.ToString() == id)
+            if (shopId.ToString() == id || shopId == Guid.Empty)
             {
                 return false;
             }
@@ -59,11 +66,18 @@ namespace MISA.DataLayer
                 return true;
             }
         }
+        /// <summary>
+        /// check sdt xem có trùng hay không
+        /// </summary>
+        /// <param name="shopPhone">sdt cần kiểm tra</param>
+        /// <param name="id">id này để so sánh id tìm được theo shopcode với chính nó, nếu 2 id bằng nhau thì không trùng, ngược lại sẽ trả 
+        /// lại kết quả trùng sdt</param>
+        /// <returns></returns>
         public bool checkShopPhoneExistedOrNot(string shopPhone, string id)
         {
             var sqlSelectShopPhone = $"SELECT eShopId From EShop AS E where E.eShopPhoneNumber = '{shopPhone}'";
             Guid shopId = _dbConnection.Query<Guid>(sqlSelectShopPhone).FirstOrDefault();
-            if (shopId.ToString() == id)
+            if (shopId.ToString() == id || shopId == Guid.Empty)
             {
                 return false;
             }

@@ -336,6 +336,8 @@ export default {
       const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByCode?sortByShopCode=' + this.eShopCodeForChangingData);
       this.eShop = response.data[0];
       this.eShopDiaTitle = "Sửa cửa hàng";
+      this.Province = this.eShop.eShopProvince;
+      this.District = this.eShop.District;
     }
     else{
       this.eShopDiaTitle = "Thêm mới cửa hàng"

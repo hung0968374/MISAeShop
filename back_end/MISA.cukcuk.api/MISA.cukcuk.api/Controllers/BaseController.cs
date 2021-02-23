@@ -22,6 +22,10 @@ namespace MISA.cukcuk.api.Controllers
         {
             _baseService = baseService;
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu
+        /// </summary>
+        /// <returns>trả về list danh sách</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -36,6 +40,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu theo code
+        /// </summary>
+        /// <param name="sortByShopCode">mã cần lấy về</param>
+        /// <returns></returns>
         [HttpGet("filterByCode")]
         public IActionResult GetByFilteringShopCode([FromQuery] string sortByShopCode)
         {
@@ -50,6 +59,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu theo tên
+        /// </summary>
+        /// <param name="sortByShopName">tên cần lấy</param>
+        /// <returns></returns>
         [HttpGet("filterByName")]
         public IActionResult GetByShopName([FromQuery] string sortByShopName)
         {
@@ -64,6 +78,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu theo địa chỉ
+        /// </summary>
+        /// <param name="filterString">địa chỉ cần lấy</param>
+        /// <returns></returns>
         [HttpGet("filterByAddress")]
         public IActionResult GetByShopAddress([FromQuery] string filterString)
         {
@@ -78,6 +97,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu theo trạng thái object
+        /// </summary>
+        /// <param name="filterString">trạng thái cần lấy</param>
+        /// <returns></returns>
         [HttpGet("filterByShopStatus")]
         public IActionResult GetByShopStatus([FromQuery] string filterString)
         {
@@ -92,6 +116,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm lấy dữ liệu theo sdt
+        /// </summary>
+        /// <param name="filterString">sdt cần lấy</param>
+        /// <returns></returns>
         [HttpGet("filterByPhoneNumber")]
         public IActionResult GetByShopPhoneNumber([FromQuery] string filterString)
         {
@@ -106,6 +135,11 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, serviceResult.Data);
             }
         }
+        /// <summary>
+        /// Hàm thêm dữ liệu
+        /// </summary>
+        /// <param name="entity">object cần truyền vào để thêm dữ liệu</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(MISAEntity entity)
         {
@@ -123,6 +157,12 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, res);
             }
         }
+        /// <summary>
+        /// Hàm sửa dữ liệu
+        /// </summary>
+        /// <param name="entity">tên object cần sửa</param>
+        /// <param name="eShopCode">mã của object cần sửa</param>
+        /// <returns></returns>
         [HttpPut("{eShopCode}")]
         public IActionResult Put(MISAEntity entity, Guid eShopCode)
         {
@@ -140,11 +180,12 @@ namespace MISA.cukcuk.api.Controllers
                 return StatusCode(200, res);
             }
         }
-
-        //var res = _baseService.Delete(entity, code);
-        //return Ok(res);
-
-
+        /// <summary>
+        /// Hàm xóa dữ liệu
+        /// </summary>
+        /// <param name="entity">tên object cần xóa</param>
+        /// <param name="eShopId">id của object cần xóa</param>
+        /// <returns></returns>
         [HttpDelete("{eShopId}")]
         public IActionResult Delete(MISAEntity entity,  Guid eShopId)
         {

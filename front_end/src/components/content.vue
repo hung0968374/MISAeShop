@@ -16,7 +16,7 @@
             </div>
              <div class="shopAddress_input">
                 <div class="squareIcon">*</div>
-                <input type="text" class="address_input" >
+                <input type="text" class="address_input" @keyup.enter="sortByAddress" v-model="shopAddress">
             </div>
              <div class="shopPhoneNum_input">
                 <div class="squareIcon">*</div>
@@ -37,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr :key = "listData.eShopId" v-for="listData in listDatas" class="hoverShopInfo"
+                    <tr :key = "listData.eShopId" v-for="listData in listSlicedData" class="hoverShopInfo"
                     @mouseup.right="$emit('deleteThisShop',
                      {eShopCode : listData.eShopCode,
                      eShopName:listData.eShopName})"
@@ -51,7 +51,7 @@
                 </tbody>
             </table>
         </div>
-        <pageFooter />
+        <pageFooter v-on:Pagination = "Pagination" />
     </div>
 </template>
 <script>
@@ -67,10 +67,12 @@ export default {
       pageFooter
     },
     props: ["listDatas"],
-    computed:{
-       
-    },
+    
     methods: {
+        Pagination(page){
+            // this.listDatas = this.listDatas.slice(20*(page-1), 20*page);
+            this.currentPage = page;
+        },
         openShopForm(){
             this.$emit('openShopForm');
         },
@@ -103,6 +105,9 @@ export default {
         sortByPhone(){
             this.$emit("sortByPhone", this.shopPhone);
         },
+        sortByAddress(){
+            this.$emit("sortByAddress", this.shopAddress);
+        },
             // console.log(shopCode);
             // const response =  axios.delete('http://localhost:57752/api/v1/EShops/delete/' + shopCode);
             // console.log(response);
@@ -119,10 +124,16 @@ export default {
             shopName: "",
             shopAddress:"",
             shopPhone:"",
+            currentPage: 1,
         }
     },
     filters: {
 
+    },
+    computed: {
+        listSlicedData(){
+            return  this.listDatas.slice(20*(this.currentPage-1), 20*this.currentPage);
+        }
     }
 }
 

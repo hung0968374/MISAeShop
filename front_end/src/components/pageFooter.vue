@@ -1,18 +1,18 @@
 <template>
   <div class="footer">
-    <div class="toTopNav">
+    <div class="toTopNav" @click="toFirstPage">
       <div class="toTopNav_icon"></div>
     </div>
-    <div class="toPrevNav">
+    <div class="toPrevNav" @click="toPrevPage">
       <div class="toPrevNav_icon"></div>
     </div>
     Trang
-    <div class="currentPage">1</div>
-    trên 1
-    <div class="toNexNav">
+    <div class="currentPage">{{this.currentPage}}</div>
+    trên 13
+    <div class="toNexNav" @click="toNextPage">
       <div class="toNextNav_icon"></div>
     </div>
-    <div class="toLastNav">
+    <div class="toLastNav" @click="toLastPage">
       <div class="toLastNav_icon"></div>
     </div>
     <div class="reload">
@@ -27,6 +27,36 @@
 <script>
 export default {
   name: "pageFooter",
+  data(){
+    return {
+      currentPage: 1,
+    };
+  },
+  methods: {
+    toPrevPage(){
+      if (this.currentPage > 1){
+        this.currentPage-=1;
+        this.$emit('Pagination', this.currentPage);
+      }
+    },
+    toNextPage(){
+      if (this.currentPage < 13){
+        this.currentPage+=1;
+        this.$emit('Pagination', this.currentPage);
+      }
+    },
+    toFirstPage(){
+      this.currentPage = 1;
+      this.$emit('Pagination', this.currentPage);
+    },
+    toLastPage(){
+      this.currentPage = 13;
+      this.$emit('Pagination', this.currentPage);
+    }
+  },
+  mounted(){
+    this.$emit('Pagination', this.currentPage)
+  }
 };
 </script>
 <style scoped>

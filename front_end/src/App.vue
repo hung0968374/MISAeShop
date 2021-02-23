@@ -14,6 +14,7 @@
                v-on:reloadData = "reloadData"
                v-on:changeShopInfo = "changeShopInfo"
                v-on:addNewShopBtn = "addNewShopBtn"
+               v-on:sortByAddress = "sortByAddress"
                 />
       <dialogShopInfoForm v-if="showShopPropDialog"
       v-on:closeShopInfoDia = "closeShopInfoDia"
@@ -102,6 +103,12 @@ export default {
       console.log(res.data);
       this.data = res.data;
     },
+    async sortByAddress(url){
+      console.log(url);
+      const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByAddress?filterString=' + url);
+      console.log(res.data);
+      this.data = res.data;
+    },
     async sortShopByPhone(url){
       console.log(url);
       const res = await axios.get('http://localhost:57752/api/v1/EShops/filterByPhoneNumber?filterString=' + url);
@@ -112,6 +119,13 @@ export default {
       const response = await axios.get('http://localhost:57752/api/v1/EShops')
       this.data = response.data;
     },
+    // async Pagination(page){
+    //   const response = await axios.get('http://localhost:57752/api/v1/EShops');
+    //   this.data = response.data;
+    //   this.data = this.data.slice(20*(page-1), 20*page)
+    //   console.log(page);
+    //   console.log(this.data);
+    // }
   },
   async created (){
       const response = await axios.get('http://localhost:57752/api/v1/EShops')

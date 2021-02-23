@@ -43,6 +43,7 @@ namespace MISA.Service
             serviceResult.Data = _dbContext.GetByFilteringShopAddress(filterString);
             return serviceResult;
         }
+
         public virtual ServiceResult GetByFilteringShopPhoneNumber(string filterString)
         {
             var serviceResult = new ServiceResult();

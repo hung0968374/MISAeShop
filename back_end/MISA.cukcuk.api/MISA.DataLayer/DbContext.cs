@@ -169,6 +169,12 @@ namespace MISA.DataLayer
             var res = _dbConnection.Execute(sqlCommand);
             return res;
         }
+        /// <summary>
+        /// Hàm xóa thông tin
+        /// </summary>
+        /// <param name="entity"> thực thể cần xóa: ví dụ customer, eShop</param>
+        /// <param name="code">xóa theo id của thực thể</param>
+        /// <returns></returns>
         public int Delete(object entity, string code)
         {
             var className = typeof(MISAEntity).Name;
@@ -176,6 +182,12 @@ namespace MISA.DataLayer
             var res = _dbConnection.Execute(sqlCommand);
             return res;
         }
+        /// <summary>
+        /// Hàm xóa thông tin theo mã của thực thể
+        /// </summary>
+        /// <param name="entity">tên thực thể</param>
+        /// <param name="code">Mã cần xóa</param>
+        /// <returns></returns>
         public int DeleteEShopCode(object entity, string code)
         {
             var className = typeof(MISAEntity).Name;
