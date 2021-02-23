@@ -129,7 +129,7 @@ namespace MISA.cukcuk.api.Controllers
             var res = _baseService.Put(entity, eShopCode.ToString());
             if (res.Success == false)
             {
-                return StatusCode(400, res.Data);
+                return StatusCode(200, res.Data);
             }
             else if (res.Success == true && (int)res.Data > 0)
             {

@@ -1,7 +1,7 @@
 <template>
   <div class="dialog" >
     <div class="title">
-      <strong>Thêm mới cửa hàng</strong>
+      <strong>{{this.eShopDiaTitle}}</strong>
       <span class="x_icon" @click="closeShopInfoDia">X</span>
     </div>
     <div class="shopPropInfo">
@@ -97,8 +97,8 @@
         <div class="helping_icon" tabindex="1"></div>
         Trợ giúp
       </div>
-      <div class="saving">
-        <div class="saving_icon" tabindex="1"></div>
+      <div class="saving" @click="saveShopInfo">
+        <div class="saving_icon" tabindex="1" ></div>
         Lưu
       </div>
       <div class="saveAndAdd" @click="addingNewEshop">
@@ -154,6 +154,7 @@ export default {
         eShopTaxCode: "",
         eShopVillage: "",
       },
+      eShopDiaTitle: "",
       eShopClone:{
         eShopAddress: "",
         eShopCode: "",
@@ -169,6 +170,7 @@ export default {
       },
       warningMesg : "",
       qualifiedToPost: true,
+      qualifiedToPut: true,
     };
   },
   beforeMount: function () {
@@ -195,65 +197,137 @@ export default {
       }
     },
     async addingNewEshop(){
-      this.warningMesg="";
-      if (!this.eShop.eShopCode ){
-        this.warningMesg += "Khong duoc de trong ma cua hang";
-        this.qualifiedToPost = false;
-        alert(this.warningMesg);
-      }
-      else if (!this.eShop.eShopName){
-        this.warningMesg += "Khong duoc de trong ten cua hang";
-        this.qualifiedToPost = false;
-        alert(this.warningMesg);
-      }
-      else if (!this.eShop.eShopAddress){
-        this.warningMesg += "Khong duoc de trong dia chi cua hang";
-        this.qualifiedToPost = false;
-        alert(this.warningMesg);
-      }
-      else if (!this.eShop.eShopPhoneNumber){
-        this.warningMesg += "Khong duoc de trong so dien thoai";
-        this.qualifiedToPost = false;
-        alert(this.warningMesg);
-      }
-      if (this.eShop.eShopNationality == 0){
-        this.eShop.eShopNationality = "Việt Nam";
+      if (this.openChangeShop){
+        alert('"Lưu và thêm mới" chỉ dành cho chuyên mục thêm mới khách hàng, để sửa khách hàng hãy chọn "Lưu" bạn nhé!')
       }
       else{
-        this.eShop.eShopNationality = "Singapore";
-      }
-      this.eShop.eShopAddress = "";
-      this.eShop.eShopAddress+=",";
-      this.eShop.eShopProvince = this.Province;
-      this.eShop.eShopDistrict = this.District;
-      if (this.eShop.eShopRoad != ""){
-        this.eShop.eShopAddress+= this.eShop.eShopRoad +" ";
-      }
-      if (this.eShop.eShopVillage != ""){
-        this.eShop.eShopAddress+= this.eShop.eShopVillage +" ";
-      }
-      this.eShop.eShopAddress+= this.eShop.eShopDistrict +" " +this.eShop.eShopProvince ;
-      this.eShopClone.eShopAddress = this.eShop.eShopAddress;
-      this.eShopClone.eShopCode = this.eShop.eShopCode;
-      this.eShopClone.eShopDistrict = this.eShop.eShopDistrict;
-      this.eShopClone.eShopName = this.eShop.eShopName;
-      this.eShopClone.eShopNationality = this.eShop.eShopNationality;
-      this.eShopClone.eShopPhoneNumber = this.eShop.eShopPhoneNumber;
-      this.eShopClone.eShopProvince = this.eShop.eShopProvince;
-      this.eShopClone.eShopRoad = this.eShop.eShopRoad;
-      this.eShopClone.eShopStatus = "Đang hoạt động";
-      this.eShopClone.eShopTaxCode = this.eShop.eShopTaxCode;
-      this.eShopClone.eShopVillage = this.eShop.eShopStatus;
-      if (this.qualifiedToPost){
-        const response = await axios.post('http://localhost:57752/api/v1/EShops', this.eShopClone);
-        console.log(response.data.MISACode);
-        if (response.data.MISACode == 200 || response.data.MISACode == 201){
-          alert("Đã thêm thành công thông tin shop mới");
-          this.$emit("closeShopInfoDia");
+        this.warningMesg="";
+        if (!this.eShop.eShopCode ){
+          this.warningMesg += "Không được để trống mã cửa hàng";
+          this.qualifiedToPost = false;
+          alert(this.warningMesg);
         }
-        else if (response.data.MISACode == 400){
-          alert("Thông tin của trường có dấu sao đã bị trùng hoặc trống, vui lòng thay đổi");
+        else if (!this.eShop.eShopName){
+          this.warningMesg += "Không được để trống tên cửa hàng";
+          this.qualifiedToPost = false;
+          alert(this.warningMesg);
         }
+        else if (!this.eShop.eShopAddress){
+          this.warningMesg += "Không được để trống địa chỉ cửa hàng";
+          this.qualifiedToPost = false;
+          alert(this.warningMesg);
+        }
+        else if (!this.eShop.eShopPhoneNumber){
+          this.warningMesg += "Không được để trống số điện thoại cửa hàng";
+          this.qualifiedToPost = false;
+          alert(this.warningMesg);
+        }
+        if (this.eShop.eShopNationality == 0){
+          this.eShop.eShopNationality = "Việt Nam";
+        }
+        else{
+          this.eShop.eShopNationality = "Singapore";
+        }
+        this.eShop.eShopAddress = "";
+        this.eShop.eShopAddress+=",";
+        this.eShop.eShopProvince = this.Province;
+        this.eShop.eShopDistrict = this.District;
+        if (this.eShop.eShopRoad != ""){
+          this.eShop.eShopAddress+= this.eShop.eShopRoad +" ";
+        }
+        if (this.eShop.eShopVillage != ""){
+          this.eShop.eShopAddress+= this.eShop.eShopVillage +" ";
+        }
+        this.eShop.eShopAddress+= this.eShop.eShopDistrict +" " +this.eShop.eShopProvince ;
+        this.eShopClone.eShopAddress = this.eShop.eShopAddress;
+        this.eShopClone.eShopCode = this.eShop.eShopCode;
+        this.eShopClone.eShopDistrict = this.eShop.eShopDistrict;
+        this.eShopClone.eShopName = this.eShop.eShopName;
+        this.eShopClone.eShopNationality = this.eShop.eShopNationality;
+        this.eShopClone.eShopPhoneNumber = this.eShop.eShopPhoneNumber;
+        this.eShopClone.eShopProvince = this.eShop.eShopProvince;
+        this.eShopClone.eShopRoad = this.eShop.eShopRoad;
+        this.eShopClone.eShopStatus = "Đang hoạt động";
+        this.eShopClone.eShopTaxCode = this.eShop.eShopTaxCode;
+        this.eShopClone.eShopVillage = this.eShop.eShopStatus;
+        if (this.qualifiedToPost){
+          const response = await axios.post('http://localhost:57752/api/v1/EShops', this.eShopClone);
+          console.log(response.data.MISACode);
+          if (response.data.MISACode == 200 || response.data.MISACode == 201){
+            alert("Đã thêm thành công thông tin shop mới");
+            this.$emit("closeShopInfoDia");
+          }
+          else if (response.data.MISACode == 400){
+            alert("Thông tin của trường có dấu sao đã bị trùng hoặc trống, vui lòng thay đổi");
+          }
+        }
+      }
+    },
+    async saveShopInfo(){
+      if (this.openChangeShop){
+          this.warningMesg="";
+        if (!this.eShop.eShopCode ){
+          this.warningMesg += "Không được để trống mã cửa hàng";
+          this.qualifiedToPut = false;
+          alert(this.warningMesg);
+        }
+        else if (!this.eShop.eShopName){
+          this.warningMesg += "Không được để trống tên cửa hàng";
+          this.qualifiedToPut = false;
+          alert(this.warningMesg);
+        }
+        else if (!this.eShop.eShopAddress){
+          this.warningMesg += "Không được để trống địa chỉ cửa hàng";
+          this.qualifiedToPut = false;
+          alert(this.warningMesg);
+        }
+        else if (!this.eShop.eShopPhoneNumber){
+          this.warningMesg += "Không được để trống số điện thoại";
+          this.qualifiedToPut = false;
+          alert(this.warningMesg);
+        }
+        if (this.eShop.eShopNationality == 0){
+          this.eShop.eShopNationality = "Việt Nam";
+        }
+        else{
+          this.eShop.eShopNationality = "Singapore";
+        }
+        this.eShop.eShopAddress = "";
+        this.eShop.eShopProvince = this.Province;
+        this.eShop.eShopDistrict = this.District;
+        if (this.eShop.eShopRoad != ""){
+          this.eShop.eShopAddress+= this.eShop.eShopRoad +", ";
+        }
+        if (this.eShop.eShopVillage != ""){
+          this.eShop.eShopAddress+= this.eShop.eShopVillage +", ";
+        }
+        this.eShop.eShopAddress+= this.eShop.eShopDistrict +" " +this.eShop.eShopProvince ;
+        this.eShopClone.eShopAddress = this.eShop.eShopAddress;
+        this.eShopClone.eShopCode = this.eShop.eShopCode;
+        this.eShopClone.eShopDistrict = this.eShop.eShopDistrict;
+        this.eShopClone.eShopName = this.eShop.eShopName;
+        this.eShopClone.eShopNationality = this.eShop.eShopNationality;
+        this.eShopClone.eShopPhoneNumber = this.eShop.eShopPhoneNumber;
+        this.eShopClone.eShopProvince = this.eShop.eShopProvince;
+        this.eShopClone.eShopRoad = this.eShop.eShopRoad;
+        this.eShopClone.eShopStatus = "Đang hoạt động";
+        this.eShopClone.eShopTaxCode = this.eShop.eShopTaxCode;
+        this.eShopClone.eShopVillage = this.eShop.eShopStatus;
+        if (this.qualifiedToPut){
+            console.log(this.eShop.eShopId);
+            const res = await axios.put('http://localhost:57752/api/v1/EShops/' + this.eShop.eShopId, this.eShopClone)
+            console.log(res.data);
+            if (res.data.MISACode == 400){
+              alert('Thông tin bị trùng, bạn vui lòng sửa lại các trường thông tin có dấu sao')
+            }
+            else if (res.data.MISACode == 200 || res.data.MISACode == 201){
+              alert("Bạn đã sửa thành công thông tin shop vừa chọn");
+              this.$emit("closeShopInfoDia");
+            }
+        }
+      }
+      else{
+        alert('"Sửa" chỉ dành cho chuyên mục sửa khách hàng, để thêm mới, hãy chọn "Lưu và thêm mới" bạn nhé!')
       }
     }
   },
@@ -261,6 +335,10 @@ export default {
     if (this.openChangeShop){
       const response = await axios.get('http://localhost:57752/api/v1/EShops/filterByCode?sortByShopCode=' + this.eShopCodeForChangingData);
       this.eShop = response.data[0];
+      this.eShopDiaTitle = "Sửa cửa hàng";
+    }
+    else{
+      this.eShopDiaTitle = "Thêm mới cửa hàng"
     }
   },
 };
@@ -287,7 +365,8 @@ export default {
   align-items: center;
 }
 .x_icon {
-  margin-left: 500px;
+  margin-left: auto;
+  margin-right: 10px;
   color: brown;
   cursor: pointer;
 }
