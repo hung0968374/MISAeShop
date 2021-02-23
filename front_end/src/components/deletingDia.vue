@@ -8,7 +8,7 @@
         </div>
         <div class="question">
             <div class="question_icon"></div>
-            <div class="content">Bạn có chắc muốn xóa {{this.deleteEShopName}} khỏi danh sách khách hàng?</div>
+            <div class="content">Bạn có chắc chắn muốn xóa {{this.deleteEShopName}} khỏi danh sách khách cửa hàng.</div>
         </div>
         <div class="footer">
             <div class="deleting" @click="deleteShop">
@@ -48,7 +48,7 @@ export default {
     
     .title {
         height: 40px;
-        background: blanchedalmond;
+        background: rgb(158 158 158 / 17%);
         font-size: 18px;
         padding: 15px; 
         display: inline-flex;
@@ -66,13 +66,15 @@ export default {
         padding: 15px 30px 30px 15px;
         font-size: 18px;
         height: 50px;
-        background: rgb(235, 225, 225);
+        background: white;
         display: flex;
         align-items: center;
+        border: 1px solid darkgray;
     }
     .question_icon {
         width: 50px;
         background-image: url('../assets/question_icon.jpg');
+        background-repeat: no-repeat ;
         height: 50px;
         border-radius: 50%;
         background-size: contain;
@@ -80,7 +82,7 @@ export default {
     }
     .footer {
         height: 38px;
-        background-color: darkcyan;
+        background-color: white;
         font-size: 18px;
         padding: 15px ;
         display: flex;
@@ -88,8 +90,8 @@ export default {
     }
     .deleting {
         height: 15px;
-        padding:10px 40px 10px 25px;
-        background-color: red;
+        padding:10px 35px 10px 20px;
+        background-color: #f40404b3;
         display: flex;
         align-items: center;
         border-radius: 5px;

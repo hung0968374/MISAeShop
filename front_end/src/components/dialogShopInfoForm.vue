@@ -360,7 +360,8 @@ export default {
 }
 .title {
   height: 40px;
-  background: blanchedalmond;
+  background: rgb(220 220 220 / 73%);
+  border-bottom: 0.5px solid darkgray;
   font-size: 18px;
   padding: 15px;
   display: flex;
