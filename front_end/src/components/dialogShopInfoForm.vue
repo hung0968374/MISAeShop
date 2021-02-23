@@ -258,7 +258,7 @@ export default {
             this.$emit("closeShopInfoDia");
           }
           else if (response.data.MISACode == 400){
-            alert("Thông tin của trường có dấu sao đã bị trùng hoặc trống, vui lòng thay đổi");
+            alert('Thông tin bị trùng, bạn vui lòng sửa lại các trường thông tin có dấu sao hoặc thay đổi số điện thoại bạn nhé');
           }
         }
       }
@@ -318,7 +318,7 @@ export default {
             const res = await axios.put('http://localhost:57752/api/v1/EShops/' + this.eShop.eShopId, this.eShopClone)
             console.log(res.data);
             if (res.data.MISACode == 400){
-              alert('Thông tin bị trùng, bạn vui lòng sửa lại các trường thông tin có dấu sao')
+              alert('Thông tin bị trùng, bạn vui lòng sửa lại các trường thông tin có dấu sao hoặc thay đổi số điện thoại bạn nhé')
             }
             else if (res.data.MISACode == 200 || res.data.MISACode == 201){
               alert("Bạn đã sửa thành công thông tin shop vừa chọn");
