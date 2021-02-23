@@ -28,43 +28,48 @@ export default {
    }
    .shop_code{
        width: 177px;
-       background: blue;
+       background: #d4cacab9;
        display: flex;
        align-items: center;
        justify-content: center;
        border-radius: 3px;
+       margin: 1px;
    }
    .shop_name {
         width: 277px;
-       background: rgb(32, 114, 83);
+       background: #d4cacab9;
        display: flex;
        align-items: center;
        justify-content: center;
        border-radius: 3px;
+        margin: 1px;
    }
    .shop_address {
         width: 587px;
-       background: rgb(255, 166, 0);
+       background: #d4cacab9;
        display: flex;
        align-items: center;
        justify-content: center;
        border-radius: 3px;
+       margin: 1px;
    }
    .shop_phoneNumber {
         width: 200px;
-       background: rgb(255, 0, 43);
+       background: #d4cacab9;
        display: flex;
        align-items: center;
        justify-content: center;
        border-radius: 3px;
+       margin: 1px;
    }
    .shop_status {
          width: 200px;
-       background: rgb(0, 153, 255);
+       background: #d4cacab9;
        display: flex;
        align-items: center;
        justify-content: center;
        border-radius: 3px;
+        margin: 1px;
    }
    .shop_property {
        margin-left: 10px;

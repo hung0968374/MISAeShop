@@ -3,13 +3,13 @@
     <div class="user_choice">
       <div class="adding_new" v-on:click = "changingDiaShopFormStt">
         <div class="adding_icon"></div>
-        <div class="adding_content" @click="addNewShopBtn" >Thêm mới</div>
+        <div class="adding_content">Thêm mới</div>
       </div>
       <div class="clone">
         <div class="clone_icon"></div>
         <div class="clone_content">Nhân bản</div>
       </div>
-      <div class="change">
+      <div class="change"  @click="clickedChangeBttn">
         <div class="change_icon"></div>
         <div class="change_content">Sửa</div>
       </div>
@@ -36,6 +36,9 @@ export default {
     },
     reloadData: function(){
       this.$emit('reloadData');
+    },
+    clickedChangeBttn(){
+      alert("Bạn hãy chọn shop muốn sửa và bấm chuột trái 2 lần bạn nhé!")
     }
   }
 };
@@ -54,14 +57,13 @@ export default {
 }
 .user_choice {
   display: flex;
-  background-color: blueviolet;
+  background-color: #00577b;
 }
 
 .adding_new {
   display: flex;
   padding: 10px;
   border-left: 1px solid rgb(8, 8, 94);
-  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +73,6 @@ export default {
   display: flex;
   padding: 10px;
   border-left: 1px solid rgb(8, 8, 94);
-  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +83,6 @@ export default {
   display: flex;
   padding: 10px;
   border-left: 1px solid rgb(8, 8, 94);
-  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +92,6 @@ export default {
   display: flex;
   padding: 10px;
   border-left: 1px solid rgb(8, 8, 94);
-  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +101,6 @@ export default {
   display: flex;
   padding: 10px;
   border-left: 1px solid rgb(8, 8, 94);
-  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;

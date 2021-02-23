@@ -130,7 +130,7 @@ export default {
 
 <style scoped>
     .hoverShopInfo:hover {
-        background: blueviolet;
+        background: #c3ecff;
     }
    .content_part {
         position: absolute;
@@ -140,6 +140,9 @@ export default {
         right: 0px;
         background-color: #efeeee;
         width: 1322px;
+   }
+   tbody tr:nth-child(even){
+       background-color: white;
    }
    td {
        cursor: pointer;

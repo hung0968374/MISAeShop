@@ -45,7 +45,7 @@ export default {
         width: 200px;
         height: 98vh;
         margin: 0px;
-        background-color: #212191db;
+        background-color: #026b97;
     }
     .menu .logo{
         width: 100%;
@@ -53,7 +53,7 @@ export default {
         background-image: url('../assets/Logo_Full_White.png') ;
         background-size: contain;
         background-repeat: no-repeat;
-        background-color: #151561;
+        background-color: #00577b;
         cursor: pointer;
     }
     .menu .menu__content .menu__item {
@@ -62,7 +62,7 @@ export default {
     }
     .menu .menu__content .menu__item5 {
         display: flex;
-        background-color: #151561;
+        background-color: #00577b;
          padding: 15px;
     }   
     .menu .menu__content .menu__item .menu__icon1 {
