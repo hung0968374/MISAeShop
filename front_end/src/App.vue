@@ -51,7 +51,7 @@ export default {
       deleteEShopName:"",
       deleteEshopCode:"",
       eShopShopCodeForChangingData: "",
-      openChangeShop:"false"
+      openChangeShop:false,
     }
   },
   methods: {

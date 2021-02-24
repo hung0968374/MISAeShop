@@ -46,6 +46,7 @@ export default {
         height: 98vh;
         margin: 0px;
         background-color: #026b97;
+        color: white;
     }
     .menu .logo{
         width: 100%;

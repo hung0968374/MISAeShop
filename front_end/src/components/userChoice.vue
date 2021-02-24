@@ -54,6 +54,7 @@ export default {
 }
 .inside_content {
   margin: 10px 10px 0px 10px;
+  color: white;
 }
 .user_choice {
   display: flex;
