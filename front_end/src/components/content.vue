@@ -132,7 +132,7 @@ export default {
     },
     computed: {
         listSlicedData(){
-            return  this.listDatas.slice(20*(this.currentPage-1), 20*this.currentPage);
+            return  this.listDatas.slice(13*(this.currentPage-1), 13*this.currentPage);
         }
     }
 }
