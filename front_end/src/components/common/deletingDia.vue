@@ -90,7 +90,7 @@ export default {
 }
 .question_icon {
   width: 50px;
-  background-image: url("../assets/question_icon.jpg");
+  background-image: url("../../assets/question_icon.jpg");
   background-repeat: no-repeat;
   height: 50px;
   border-radius: 50%;
@@ -115,7 +115,7 @@ export default {
   margin-left: 290px;
 }
 .del_icon {
-  background: url("../assets/common-icon.png") no-repeat -105px -204px;
+  background: url("../../assets/common-icon.png") no-repeat -105px -204px;
   width: 10px;
   height: 12px;
   margin-right: 10px;
@@ -127,7 +127,7 @@ export default {
   align-items: center;
 }
 .cancel_icon {
-  background: url("../assets/common-icon.png") no-repeat -255px -130px;
+  background: url("../../assets/common-icon.png") no-repeat -255px -130px;
   width: 10px;
   height: 12px;
   margin-right: 10px;

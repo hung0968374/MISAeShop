@@ -92,7 +92,7 @@ export default {
   margin-left: 2px;
 }
 .toTopNav_icon {
-  background: url("../assets/common-icon.png") no-repeat -656px -131px;
+  background: url("../../assets/common-icon.png") no-repeat -656px -131px;
   width: 8px;
   height: 8px;
   display: flex;
@@ -100,7 +100,7 @@ export default {
   justify-content: center;
 }
 .toPrevNav_icon {
-  background: url("../assets/common-icon.png") no-repeat -708px -131px;
+  background: url("../../assets/common-icon.png") no-repeat -708px -131px;
   width: 5px;
   height: 8px;
   display: flex;
@@ -108,7 +108,7 @@ export default {
   justify-content: center;
 }
 .toNextNav_icon {
-  background: url("../assets/common-icon.png") no-repeat  -758px -131px;
+  background: url("../../assets/common-icon.png") no-repeat  -758px -131px;
   width: 8px;
   height: 8px;
   display: flex;
@@ -116,7 +116,7 @@ export default {
   justify-content: center;
 }
 .toLastNav_icon {
-  background: url("../assets/common-icon.png") no-repeat -806px -131px;
+  background: url("../../assets/common-icon.png") no-repeat -806px -131px;
   width: 8px;
   height: 8px;
   display: flex;
@@ -136,7 +136,7 @@ export default {
     margin-right: 2px;
 }
 .reload_icon {
-     background: url("../assets/common-icon.png") no-repeat -855px -128px;
+     background: url("../../assets/common-icon.png") no-repeat -855px -128px;
   width: 10px;
   height: 14px;
   display: flex;

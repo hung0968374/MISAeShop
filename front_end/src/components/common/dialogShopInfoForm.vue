@@ -613,25 +613,25 @@ select {
   cursor: pointer;
 }
 .helping_icon {
-  background: url("../assets/common-icon.png") no-repeat -179px -179px;
+  background: url("../../assets/common-icon.png") no-repeat -179px -179px;
   width: 12px;
   height: 12px;
   margin-right: 10px;
 }
 .saving_icon {
-  background: url("../assets/common-icon.png") no-repeat -330px -129px;
+  background: url("../../assets/common-icon.png") no-repeat -330px -129px;
   width: 12px;
   height: 12px;
   margin-right: 10px;
 }
 .saveAndAdd_icon {
-  background: url("../assets/common-icon.png") no-repeat -29px -130px;
+  background: url("../../assets/common-icon.png") no-repeat -29px -130px;
   width: 12px;
   height: 12px;
   margin-right: 10px;
 }
 .cancel_icon {
-  background: url("../assets/common-icon.png") no-repeat -255px -130px;
+  background: url("../../assets/common-icon.png") no-repeat -255px -130px;
   width: 12px;
   height: 12px;
   margin-right: 10px;

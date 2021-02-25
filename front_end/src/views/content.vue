@@ -55,9 +55,9 @@
     </div>
 </template>
 <script>
-import userChoice from './userChoice';
-import shopProp from './shopProp';
-import pageFooter from './pageFooter';
+import userChoice from '../components/layout/userChoice';
+import shopProp from '../components/layout/shopProp';
+import pageFooter from '../components/layout/pageFooter';
 // import axios from 'axios';
 export default {
     name:'Content',

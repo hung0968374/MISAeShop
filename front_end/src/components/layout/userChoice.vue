@@ -100,35 +100,35 @@ export default {
   cursor: pointer;
 }
 .adding_icon {
-  background: url("../assets/common-icon.png") no-repeat -4px -130px;
+  background: url("../../assets/common-icon.png") no-repeat -4px -130px;
   width: 12px;
   height: 11px;
   margin-top: 3px;
   margin-right: 10px;
 }
 .clone_icon {
-  background: url("../assets/common-icon.png") no-repeat -54px -53px;
+  background: url("../../assets/common-icon.png") no-repeat -54px -53px;
   width: 12px;
   height: 11px;
   margin-top: 3px;
   margin-right: 10px;
 }
 .change_icon {
-  background: url("../assets/common-icon.png") no-repeat -79px -205px;
+  background: url("../../assets/common-icon.png") no-repeat -79px -205px;
   width: 12px;
   height: 12px;
   margin-top: 3px;
   margin-right: 10px;
 }
 .delete_icon {
-  background: url("../assets/common-icon.png") no-repeat -4px -53px;
+  background: url("../../assets/common-icon.png") no-repeat -4px -53px;
   width: 12px;
   height: 14px;
   margin-top: 3px;
   margin-right: 10px;
 }
 .recharge_icon {
-  background: url("../assets/common-icon.png") no-repeat -129px -202px;
+  background: url("../../assets/common-icon.png") no-repeat -129px -202px;
   width: 12px;
   height: 16px;
   margin-top: 3px;

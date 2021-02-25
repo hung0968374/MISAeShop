@@ -51,7 +51,7 @@ export default {
     .menu .logo{
         width: 100%;
         height: 60px;   
-        background-image: url('../assets/Logo_Full_White.png') ;
+        background-image: url('../../assets/Logo_Full_White.png') ;
         background-size: contain;
         background-repeat: no-repeat;
         background-color: #00577b;
@@ -67,32 +67,32 @@ export default {
          padding: 15px;
     }   
     .menu .menu__content .menu__item .menu__icon1 {
-        background: url('../assets/iconMenu.png') no-repeat -5px -5px;
+        background: url('../../assets/iconMenu.png') no-repeat -5px -5px;
         width: 20px;
         height: 16px;
     }
     .menu .menu__content .menu__item .menu__icon2 {
-        background: url('../assets/iconMenu.png') no-repeat -3px -194px;
+        background: url('../../assets/iconMenu.png') no-repeat -3px -194px;
         width: 20px;
         height: 20px;
     }
     .menu .menu__content .menu__item .menu__icon3 {
-        background: url('../assets/iconMenu.png') no-repeat -5px -458px;
+        background: url('../../assets/iconMenu.png') no-repeat -5px -458px;
         width: 20px;
         height: 20px;
     }
     .menu .menu__content .menu__item .menu__icon4 {
-        background: url('../assets/iconMenu.png') no-repeat -1px -377px;
+        background: url('../../assets/iconMenu.png') no-repeat -1px -377px;
         width: 24px;
         height: 19px;
     }
     .menu .menu__content .menu__item .menu__icon5 {
-        background: url('../assets/iconMenu.png') no-repeat -5px -334px;
+        background: url('../../assets/iconMenu.png') no-repeat -5px -334px;
         width: 20px;
         height: 16px;
     }
     .menu .menu__content .menu__item5 .menu__icon6 {
-        background: url('../assets/iconMenu.png') no-repeat -3px -160px;
+        background: url('../../assets/iconMenu.png') no-repeat -3px -160px;
         width: 18px;
         height: 15px;
     }

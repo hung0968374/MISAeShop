@@ -70,7 +70,7 @@ export default {
   background-size: contain;
   border-radius: 50%;
   border: 0.01px solid rgba(167, 161, 161, 0.747);
-  background-image: url("../assets/EmployeeImage.png");
+  background-image: url("../../assets/EmployeeImage.png");
   margin-top: -2px;
 }
 .selection {
@@ -79,14 +79,14 @@ export default {
 .support_icon {
   width: 60px;
   height: 40px;
-  background-image: url("../assets/phoneCall.png");
+  background-image: url("../../assets/phoneCall.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 .notification_icon {
   width: 40px;
   height: 40px;
-  background-image: url("../assets/noti_icon.webp");
+  background-image: url("../../assets/noti_icon.webp");
   background-size: contain;
   background-repeat: no-repeat;
   border: 0.02px solid rgba(214, 208, 208, 0.555);
@@ -94,7 +94,7 @@ export default {
 .questionMark_icon {
   width: 40px;
   height: 40px;
-  background-image: url("../assets/ques_icon.jpg");
+  background-image: url("../../assets/ques_icon.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   border: 0.02px solid rgba(214, 208, 208, 0.555);

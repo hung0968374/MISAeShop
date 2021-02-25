@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import Menu from './components/menu';
-import Header from './components/header';
-import Content from './components/content';
-import dialogShopInfoForm from './components/dialogShopInfoForm';
-import deletingDia from './components/deletingDia';
+import Menu from './components/layout/menu';
+import Header from './components/layout/header';
+import Content from './views/content';
+import dialogShopInfoForm from './components/common/dialogShopInfoForm';
+import deletingDia from './components/common/deletingDia';
 import axios from 'axios';
 export default {
   name: 'App',
