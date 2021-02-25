@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {}
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {}
   },
   "projects": {
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
+        "projectUniqueName": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
         "projectName": "MISA.Common",
-        "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\obj\\",
+        "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
+        "packagesPath": "C:\\Users\\nhhung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhhung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,21 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj": {
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj",
         "projectName": "MISA.DataLayer",
-        "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\nhhung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhhung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +82,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
-                "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
+              "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
+                "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
               }
             }
           }
@@ -122,21 +122,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
+        "projectUniqueName": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
         "projectName": "MISA.Service",
-        "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\obj\\",
+        "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
+        "packagesPath": "C:\\Users\\nhhung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhhung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,11 +150,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
-                "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
+              "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
+                "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj"
               },
-              "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj": {
-                "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj"
+              "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.DataLayer\\MISA.DataLayer.csproj"
               }
             }
           }
@@ -183,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

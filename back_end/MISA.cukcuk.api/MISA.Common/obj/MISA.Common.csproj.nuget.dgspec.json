@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {}
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {}
   },
   "projects": {
-    "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
+    "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
+        "projectUniqueName": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
         "projectName": "MISA.Common",
-        "projectPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\obj\\",
+        "projectPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\MISA.Common.csproj",
+        "packagesPath": "C:\\Users\\nhhung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhhung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

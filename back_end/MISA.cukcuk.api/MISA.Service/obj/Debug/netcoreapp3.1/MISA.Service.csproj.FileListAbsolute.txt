@@ -26,3 +26,17 @@ G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.csproj.CopyComplete
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.dll
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.Service.deps.json
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.Service.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.Service.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.DataLayer.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\bin\Debug\netcoreapp3.1\MISA.DataLayer.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.csprojAssemblyReference.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.AssemblyInfoInputs.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.AssemblyInfo.cs
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.csproj.CoreCompileInputs.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.csproj.CopyComplete
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.Service\obj\Debug\netcoreapp3.1\MISA.Service.pdb

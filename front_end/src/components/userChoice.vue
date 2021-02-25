@@ -44,14 +44,6 @@ export default {
 };
 </script>
 <style scoped>
-.content_part {
-  position: absolute;
-  top: 60px;
-  left: 200px;
-  bottom: 0px;
-  right: 0px;
-  background-color: #efeeee;
-}
 .inside_content {
   margin: 10px 10px 0px 10px;
   color: white;

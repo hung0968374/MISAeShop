@@ -66,8 +66,8 @@ export default {
   border-top: 1px solid darkgray;
   padding: 10px;
   display: flex;
-  top: 628px;
-  width: 1275px;
+  top: 95%;
+  width: 97%;
 }
 .toTopNav {
   padding: 5px;

@@ -146,11 +146,11 @@ export default {
    .content_part {
         position: absolute;
         top: 60px;
-        left: 200px;
+        left: 10.5%;
         bottom: 0px;
         right: 0px;
-        background-color: #efeeee;
-        width: 1322px;
+        background-color:  #efeeee;
+        width: 89.5%;
    }
    tbody tr:nth-child(even){
        background-color: white;
@@ -167,34 +167,41 @@ export default {
        font-size: 16px;
    }
    .shoptbl {
-       height: 500px;
+       height: calc(95% - 170px);
+       width: 100%;
        OverFlow-y: scroll;
+       OverFlow-x: hidden;
    }
    .shopTable td {
        border: 1px solid green;
    }
    .inputField {
        display: flex;
-       width: 1100px;
-       margin-left: 10px;
+       width: 98.8%;
+       margin-left: 11px;
        margin-right: 10px;
        background: chartreuse;
        height: 30px;
    }
    .shopCode_input {
        display: flex;
+       width: 10%;
    }
    .shopName_input {
        display: flex;
+       width: 15%;
    }
    .shopAddress_input {
        display: flex;
+       width: 51%;
    }
    .shopPhoneNum_input {
        display: flex;
+       width: 12%;
    }
     .shopStatus_input {
        display: flex;
+       width: 12%;
    }
    .squareIcon {
        width: 40px;
@@ -204,31 +211,34 @@ export default {
        justify-content: center;
    }
    .code_input {
-       width: 113px;
+       width: calc(100% - 40px);
    }
     .name_input {
-       width: 201.4px;
+       width: calc(100% - 40px);
    }
     .address_input {
-       width: 483px;
+       width: calc(100% - 40px);
    }
     .phone_input {
-       width: 132px;
+       width: calc(100% - 40px);
    }
     .stt_selection {
-        width: 181px;
+        width: 100%;
     }
     .shopCode_column {
-        width: 150px;
+        width: 9.99%;
     }
     .shopName_column {
-        width: 238px;
+        width: 15%;
     }
     .shopAddress_column {
-        width: 520px;
+        width: 50.5%;
     }
     .shopPhoneNum_column {
-        width: 170px;
+        width: 12%;
+    }
+    .shopStt_column {
+        width: 12%;
     }
     td {
         padding: 5px;

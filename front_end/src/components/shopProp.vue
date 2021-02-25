@@ -15,19 +15,11 @@ export default {
 }
 </script>
 <style scoped>
-    .content_part {
-        position: absolute;
-        top: 60px;
-        left: 200px;
-        bottom: 0px;
-        right: 0px;
-        background-color: #efeeee;
-   }
    .shop_property {
        display: flex
    }
    .shop_code{
-       width: 177px;
+       width: 10%;
        background: #d4cacab9;
        display: flex;
        align-items: center;
@@ -36,7 +28,7 @@ export default {
        margin: 1px;
    }
    .shop_name {
-        width: 277px;
+       width: 15%;
        background: #d4cacab9;
        display: flex;
        align-items: center;
@@ -45,7 +37,7 @@ export default {
         margin: 1px;
    }
    .shop_address {
-        width: 587px;
+       width: 51%;
        background: #d4cacab9;
        display: flex;
        align-items: center;
@@ -54,7 +46,7 @@ export default {
        margin: 1px;
    }
    .shop_phoneNumber {
-        width: 200px;
+       width: 12%;
        background: #d4cacab9;
        display: flex;
        align-items: center;
@@ -63,7 +55,7 @@ export default {
        margin: 1px;
    }
    .shop_status {
-         width: 200px;
+       width: 12%;
        background: #d4cacab9;
        display: flex;
        align-items: center;

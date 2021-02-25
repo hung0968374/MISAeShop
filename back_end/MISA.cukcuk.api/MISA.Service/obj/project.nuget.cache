@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Dlr2BMCH+E3VZmc5HXgfh5gEJSLBs3wT7/Cq4ZQVw7HH6XrvukYrRZDBUaMYnJAJH66jEqmPhs1RwX4WSQIuRg==",
+  "dgSpecHash": "anwu6UlrDFdck/dyvhSKiDWlToN2ZuwpA4g9NdeAvA74K3bADmffbCmuaOF8yc921yV4rsgDaCoC+jCi803PCA==",
   "success": true,
-  "projectFilePath": "G:\\MISAbtl\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
+  "projectFilePath": "C:\\Users\\nhhung\\EshopClone\\MISAeShop\\back_end\\MISA.cukcuk.api\\MISA.Service\\MISA.Service.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lenovo\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\mysqlconnector\\1.2.1\\mysqlconnector.1.2.1.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    "C:\\Users\\nhhung\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\nhhung\\.nuget\\packages\\mysqlconnector\\1.2.1\\mysqlconnector.1.2.1.nupkg.sha512",
+    "C:\\Users\\nhhung\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

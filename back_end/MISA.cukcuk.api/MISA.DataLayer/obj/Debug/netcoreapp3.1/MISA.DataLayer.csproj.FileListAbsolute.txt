@@ -22,3 +22,15 @@ G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreap
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.csproj.CopyComplete
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.dll
 G:\MISAbtl\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\bin\Debug\netcoreapp3.1\MISA.DataLayer.deps.json
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\bin\Debug\netcoreapp3.1\MISA.DataLayer.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\bin\Debug\netcoreapp3.1\MISA.DataLayer.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.csprojAssemblyReference.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.AssemblyInfoInputs.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.AssemblyInfo.cs
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.csproj.CopyComplete
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.dll
+C:\Users\nhhung\EshopClone\MISAeShop\back_end\MISA.cukcuk.api\MISA.DataLayer\obj\Debug\netcoreapp3.1\MISA.DataLayer.pdb
