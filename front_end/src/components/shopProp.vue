@@ -5,7 +5,7 @@
         </div>
         <div class="shop_name">Tên cửa hàng</div>
         <div class="shop_address">Địa chỉ</div>
-        <div class="shop_phoneNumber">Số diện thoại</div>
+        <div class="shop_phoneNumber">Số điện thoại</div>
         <div class="shop_status">Trạng thái</div>
     </div>
 </template>

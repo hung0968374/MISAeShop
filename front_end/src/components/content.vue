@@ -173,14 +173,13 @@ export default {
        OverFlow-x: hidden;
    }
    .shopTable td {
-       border: 1px solid green;
+       border: 1px solid darkgray;
    }
    .inputField {
        display: flex;
        width: 98.8%;
        margin-left: 11px;
        margin-right: 10px;
-       background: chartreuse;
        height: 30px;
    }
    .shopCode_input {

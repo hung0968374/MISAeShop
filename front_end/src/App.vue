@@ -2,7 +2,7 @@
   <div id="app1" v-bind:class="{handleDialog: showShopPropDialog, handleDelDia: showDeletingDialog }">
       <Menu />
       <Header />
-      <Content :listDatas = "this.data"
+      <Content :listDatas ="this.data"
                 
                 v-on:openShopForm = "openShopInfoForm" 
                 v-on:deleteThisShop = "deleteShop"
@@ -23,7 +23,8 @@
       />
       <deletingDia v-if="showDeletingDialog" v-on:closeDelDia = "closeDelDia" 
       :deleteEShopName = "deleteEShopName"
-      :deleteEShopCode = "deleteEshopCode" />
+      :deleteEShopCode = "deleteEshopCode" 
+      :loadData = "loadData"/>
   </div>
 </template>
 
@@ -126,10 +127,13 @@ export default {
     //   console.log(page);
     //   console.log(this.data);
     // }
-  },
-  async created (){
+    async loadData(){
       const response = await axios.get('http://localhost:57752/api/v1/EShops')
       this.data = response.data;
+    }
+  },
+  created (){
+      this.loadData();
   }
 }
 </script>
@@ -137,6 +141,10 @@ export default {
 <style>
   * {
     margin: 0px;
+    font-family: sans-serif;
+  }
+  body {
+    OverFlow: hidden;
   }
   #app1 {
     margin: 0px;
